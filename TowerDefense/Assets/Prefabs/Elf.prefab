@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3040002660352374716}
   - component: {fileID: 8447734858810997879}
   m_Layer: 0
-  m_Name: Weapons 1_4
+  m_Name: Molot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463655033813744724}
   m_LocalRotation: {x: 0, y: 0, z: -0.51339144, w: 0.8581546}
-  m_LocalPosition: {x: 0.396, y: -0.387, z: 0}
+  m_LocalPosition: {x: 0.259, y: -0.177, z: 0}
   m_LocalScale: {x: 0.59, y: 0.59, z: 0.59}
   m_ConstrainProportionsScale: 1
   m_Children: []
