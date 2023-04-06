@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 978383589447497307}
   - component: {fileID: 978383589447497308}
   - component: {fileID: 978383589447497306}
+  - component: {fileID: 3667483805344557574}
   m_Layer: 0
   m_Name: Berserk
   m_TagString: Untagged
@@ -106,6 +107,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3667483805344557574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978383589447497309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc53ab7123a9c3e43a698dcc4968a1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  Damage: 0
+  RechargeTime: 0
 --- !u!1 &1286149321504493561
 GameObject:
   m_ObjectHideFlags: 0
