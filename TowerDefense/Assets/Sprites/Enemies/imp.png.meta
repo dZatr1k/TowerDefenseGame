@@ -171,7 +171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: imp_idle_3
+      name: imp_idle_2
       rect:
         serializedVersion: 2
         x: 32
@@ -192,7 +192,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: imp_idle_
+      name: imp_idle_3
       rect:
         serializedVersion: 2
         x: 48
@@ -308,11 +308,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       imp_walk_3: -660227832
-      imp_idle_: -1269737944
+      imp_idle_2: -214388356
       imp_walk_1: 813610315
       imp_walk_2: -697921557
       imp_walk_0: -1815814479
-      imp_idle_3: -214388356
+      imp_idle_3: -1269737944
       imp_idle_0: 64165391
       imp_idle_1: 1843611605
   spritePackingTag: 
