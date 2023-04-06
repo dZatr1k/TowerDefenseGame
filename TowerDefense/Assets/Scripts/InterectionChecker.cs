@@ -1,8 +1,17 @@
+using System;
 using UnityEngine;
 
 public class InterectionChecker : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
+    [SerializeField] private GameObject _obj;
+
+    static public event Action<Cell> OnCellClick;
+
+    private void OnEnable()
+    {
+        OnCellClick += SetHero;
+    }
 
     private void Update()
     {
@@ -13,9 +22,16 @@ public class InterectionChecker : MonoBehaviour
 
             if (hit.collider != null)
             {
-                hit.collider.gameObject.TryGetComponent(out SpriteRenderer renderer);
-                renderer.color = Color.red;
+                if(hit.collider.gameObject.TryGetComponent(out Cell cell))
+                {
+                    OnCellClick?.Invoke(cell);
+                }
             }
         }
+    }
+
+    private void SetHero(Cell cell)
+    {
+        Instantiate(_obj, cell.transform);
     }
 }
