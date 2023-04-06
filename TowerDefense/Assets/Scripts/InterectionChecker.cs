@@ -4,21 +4,15 @@ using UnityEngine;
 public class InterectionChecker : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
-    [SerializeField] private GameObject _obj;
 
     static public event Action<Cell> OnCellClick;
 
-    private void OnEnable()
-    {
-        OnCellClick += SetHero;
-    }
-
     private void Update()
     {
-        transform.position = _camera.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero, 10f);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 10f);
 
             if (hit.collider != null)
             {
@@ -30,8 +24,4 @@ public class InterectionChecker : MonoBehaviour
         }
     }
 
-    private void SetHero(Cell cell)
-    {
-        Instantiate(_obj, cell.transform);
-    }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Hero : Unit
 {
+    public event Action OnHeroDie;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.TryGetComponent(out Enemy enemy) && IsRecharged)
