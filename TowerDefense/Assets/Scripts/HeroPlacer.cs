@@ -2,24 +2,24 @@ using UnityEngine;
 
 public class HeroPlacer : MonoBehaviour
 {
-    [SerializeField] private GameObject _typeOfHero;
     [SerializeField] private GameObject _heroList;
+    
+    private GameObject _typeOfHero;
 
     private void OnEnable()
     {
-        InterectionChecker.OnCellClick += SetHero;
+        InterectionChecker.OnCellClick += PlaceHero;
     }
 
     private void OnDisable()
     {
-        InterectionChecker.OnCellClick -= SetHero;
+        InterectionChecker.OnCellClick -= PlaceHero;
     }
 
-    private void SetHero(Cell cell)
+    private void PlaceHero(Cell cell)
     {
-        if (!cell.Hero)
+        if (cell.Hero == null && _typeOfHero != null)
         {
-            
             GameObject heroObject = Instantiate(_typeOfHero, cell.SpawnPoint.transform.position, Quaternion.identity, _heroList.transform);
             cell.SetHero(heroObject.GetComponent<Hero>());
         }
@@ -27,9 +27,14 @@ public class HeroPlacer : MonoBehaviour
 
     public void SetTypeOfHero(GameObject typeOfHero)
     {  
-        if (_typeOfHero.GetComponent<Hero>())
+        if (typeOfHero.TryGetComponent(out Hero hero))
         {
             _typeOfHero = typeOfHero;
         }
+    }
+
+    public void RemoveTypeOfHero()
+    {
+        _typeOfHero = null;
     }
 }
