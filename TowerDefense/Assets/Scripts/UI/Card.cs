@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour, ISelectable, IPointerClickHandler
+public class Card : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Color _SelectedColor = Color.gray;
     [SerializeField] private SelectedCardRouter _router;
@@ -21,15 +21,19 @@ public class Card : MonoBehaviour, ISelectable, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         if (_isSelected)
+        {
+            Deselect();
             _router.RemoveSelectedHero();
+        }
         else
+        {
             Select();
+        }
     }
 
     public void Deselect()
     {
         _isSelected = false;
-        _router.RemoveSelectedHero();
         _cardImage.color = Color.white;
     }
 
