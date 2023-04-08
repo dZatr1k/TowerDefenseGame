@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Ally
+  - WeaponBlocker
   layers:
   - Default
   - TransparentFX
