@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class InterectionChecker : MonoBehaviour
+public class InteractionChecker : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
 

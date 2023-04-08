@@ -11,12 +11,12 @@ public class HeroPlacer : MonoBehaviour
 
     private void OnEnable()
     {
-        InterectionChecker.OnCellClick += PlaceHero;
+        InteractionChecker.OnCellClick += PlaceHero;
     }
 
     private void OnDisable()
     {
-        InterectionChecker.OnCellClick -= PlaceHero;
+        InteractionChecker.OnCellClick -= PlaceHero;
     }
 
     private void PlaceHero(Cell cell)

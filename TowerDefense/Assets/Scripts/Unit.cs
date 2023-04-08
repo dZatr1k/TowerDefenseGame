@@ -36,9 +36,8 @@ public class Unit : MonoBehaviour
     {
         Animator.SetTrigger("die");
         print(gameObject.name + " died");
-        print(0.2f);
-        yield return new WaitForSeconds(Animator.GetCurrentAnimatorClipInfo(0).Length);
         Destroy(gameObject);
+        yield return null;
     }
 
     protected IEnumerator Recharge()

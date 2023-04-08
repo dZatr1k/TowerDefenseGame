@@ -5,20 +5,30 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    // private Transform _transform;
-    //
-    // private void Start()
-    // {
-    //     _transform = GetComponent<Transform>();
-    //     StartCoroutine(Walk());
-    // }
+    [SerializeField] protected float Speed;
+
+    private bool _isWalking = true;
+    private Transform _transform;
+
+    private void Start()
+    {
+        _transform = GetComponent<Transform>();
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent(out Hero hero))
         {
-            // StopCoroutine(Walk());
+            _isWalking = false;
             Attack(hero);
+        }
+    }
+
+    private void Update()
+    {
+        if (_isWalking)
+        {
+            _transform.position += Vector3.left * (Speed * Time.deltaTime);
         }
     }
 
@@ -30,16 +40,10 @@ public class Enemy : Unit
             Animator.SetTrigger("attack");
             if (unit.TakeDamage(Damage))
             {
-                // StartCoroutine(Walk());
+                _isWalking = true;
             }
+
             StartCoroutine(Recharge());
         }
     }
-    
-    // private IEnumerator Walk()
-    // {
-    //     _transform.Translate(Vector3.left * Speed);
-    //     StartCoroutine(Walk());
-    //     return null;
-    // }
 }
