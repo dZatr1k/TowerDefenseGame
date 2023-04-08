@@ -1,46 +1,75 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class Card : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private Color _SelectedColor = Color.gray;
     [SerializeField] private SelectedCardRouter _router;
     [SerializeField] private GameObject _heroPrefab;
 
+    private Slider _reloadSlider;
     private Image _cardImage;
+    private float _reloadTime;
     private bool _isSelected = false;
+    private bool _isReloading = false;
 
     public GameObject HeroPrefab => _heroPrefab;
 
     private void Start()
     {
         _cardImage = GetComponent<Image>();
+        if(_heroPrefab.TryGetComponent(out Hero hero))
+        {
+            _reloadTime = hero.ReloadTime;
+        }
+        _reloadSlider = GetComponent<Slider>();
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_isSelected)
+        if (_isReloading == false)
         {
-            Deselect();
-            _router.RemoveSelectedHero();
-        }
-        else
-        {
-            Select();
+            if (_isSelected)
+            {
+                Deselect();
+                _router.RemoveSelectedHero();
+            }
+            else
+            {
+                Select();
+            }
         }
     }
 
     public void Deselect()
     {
         _isSelected = false;
-        _cardImage.color = Color.white;
+        if(_isReloading == false)
+            _reloadSlider.value = 0;
     }
 
     public void Select()
     {
         _isSelected = true;
         _router.ChangeSelectedHero(GetComponent<Card>());
-        _cardImage.color = _SelectedColor;
+        _reloadSlider.value = 1;
+    }
+
+    public IEnumerator Reload()
+    {
+        _isReloading = true;
+        Deselect();
+
+        float elapsedTime = 0;
+        while (elapsedTime <= _reloadTime)
+        {
+            yield return new WaitForSeconds(0.05f);
+            elapsedTime += 0.05f;
+            _reloadSlider.value = 1 - elapsedTime / _reloadTime;
+        }
+
+        _isSelected = false;
+        _isReloading = false;
     }
 }

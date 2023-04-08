@@ -1,10 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hero : Unit
 {
+    [SerializeField] private float _reloadTime = 1.5f;
+
+    public float ReloadTime => _reloadTime;
     public event Action OnHeroDie;
 
     private void OnTriggerStay2D(Collider2D other)

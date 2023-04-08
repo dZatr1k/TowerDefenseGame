@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class HeroPlacer : MonoBehaviour
@@ -5,6 +6,8 @@ public class HeroPlacer : MonoBehaviour
     [SerializeField] private GameObject _heroList;
     
     private GameObject _typeOfHero;
+
+    public static event Action OnHeroPlaced;
 
     private void OnEnable()
     {
@@ -22,6 +25,7 @@ public class HeroPlacer : MonoBehaviour
         {
             GameObject heroObject = Instantiate(_typeOfHero, cell.SpawnPoint.transform.position, Quaternion.identity, _heroList.transform);
             cell.SetHero(heroObject.GetComponent<Hero>());
+            OnHeroPlaced?.Invoke();
         }
     }
 
