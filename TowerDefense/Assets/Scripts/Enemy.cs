@@ -24,6 +24,14 @@ public class Enemy : Unit
         }
     }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.TryGetComponent(out Hero hero))
+        {
+            _isWalking = true;
+        }
+    }
+
     private void Update()
     {
         if (_isWalking)
@@ -38,10 +46,7 @@ public class Enemy : Unit
         {
             IsRecharged = false;
             Animator.SetTrigger("attack");
-            if (unit.TakeDamage(Damage))
-            {
-                _isWalking = true;
-            }
+            unit.TakeDamage(Damage);
 
             StartCoroutine(Recharge());
         }

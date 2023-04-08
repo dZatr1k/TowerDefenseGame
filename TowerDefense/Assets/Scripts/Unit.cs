@@ -18,7 +18,7 @@ public class Unit : MonoBehaviour
         Animator = GetComponent<Animator>();
     }
 
-    public bool TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         Health -= damage;
         print(gameObject.name + ": " + Health);
@@ -26,10 +26,7 @@ public class Unit : MonoBehaviour
         if (Health <= 0)
         {
             StartCoroutine(Die());
-            return true;
         }
-
-        return false;
     }
 
     protected IEnumerator Die()
