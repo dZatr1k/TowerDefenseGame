@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Dino : Hero
+public class Dino : Thrower
 {
+    
 }

@@ -16,11 +16,11 @@ public class Hero : Unit
         }
     }
 
-    protected virtual void Attack(Unit unit)
+    protected virtual void Attack(Enemy enemy)
     {
         IsRecharged = false;
         Animator.SetTrigger("attack");
-        unit.TakeDamage(Damage);
+        enemy.TakeDamage(Damage);
         StartCoroutine(Recharge());
     }
 }
