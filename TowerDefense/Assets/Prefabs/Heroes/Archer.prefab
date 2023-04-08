@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2789735081633141469}
   - component: {fileID: 6149245061438412975}
   - component: {fileID: 6645895683072313693}
+  - component: {fileID: -4929429554293199779}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -155,6 +156,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4929429554293199779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789735081633141464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3fae160e0fc9b4aa135d78061236d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  Damage: 0
+  RechargeTime: 0
+  _reloadTime: 1.5
 --- !u!1 &7698154728229936771
 GameObject:
   m_ObjectHideFlags: 0
