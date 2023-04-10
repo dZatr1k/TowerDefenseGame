@@ -37,7 +37,7 @@ public class Unit : MonoBehaviour
         yield return null;
     }
 
-    protected IEnumerator Recharge()
+    protected virtual IEnumerator Recharge()
     {
         yield return new WaitForSeconds(RechargeTime);
         IsRecharged = true;
