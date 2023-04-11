@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : Unit
@@ -8,12 +5,6 @@ public class Enemy : Unit
     [SerializeField] protected float Speed;
 
     private bool _isWalking = true;
-    private Transform _transform;
-
-    private void Start()
-    {
-        _transform = GetComponent<Transform>();
-    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -36,7 +27,7 @@ public class Enemy : Unit
     {
         if (_isWalking)
         {
-            _transform.position += Vector3.left * (Speed * Time.deltaTime);
+            transform.position += Vector3.left * (Speed * Time.deltaTime);
         }
     }
 
