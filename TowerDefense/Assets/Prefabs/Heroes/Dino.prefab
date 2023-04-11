@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6244644229405694652}
+  - {fileID: 4590564894608815761}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   RechargeTime: 2
   _reloadTime: 1.5
   _weaponPrefab: {fileID: 9148233123816613899, guid: 0f7ff91a85c7fc64c8125c2e21e13e41, type: 3}
---- !u!1001 &5124849263267897361
+--- !u!1001 &3315361693036661820
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -224,18 +224,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -67
       objectReference: {fileID: 0}
-    - target: {fileID: 5124849264181149705, guid: 0f7ff91a85c7fc64c8125c2e21e13e41, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.039466634
-      objectReference: {fileID: 0}
     - target: {fileID: 9148233123816613899, guid: 0f7ff91a85c7fc64c8125c2e21e13e41, type: 3}
       propertyPath: m_Name
       value: SmallKnife
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7ff91a85c7fc64c8125c2e21e13e41, type: 3}
---- !u!4 &6244644229405694652 stripped
+--- !u!4 &4590564894608815761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1276332441164462765, guid: 0f7ff91a85c7fc64c8125c2e21e13e41, type: 3}
-  m_PrefabInstance: {fileID: 5124849263267897361}
+  m_PrefabInstance: {fileID: 3315361693036661820}
   m_PrefabAsset: {fileID: 0}

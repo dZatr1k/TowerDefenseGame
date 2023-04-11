@@ -1,8 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Archer : Hero
+public class Archer : Thrower
 {
-    
+    protected override void Start()
+    {
+        SetThrowRangeSettings();
+        CreateCurrentWeapon();
+    }
 }
