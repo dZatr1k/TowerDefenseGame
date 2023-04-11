@@ -21,8 +21,7 @@ public class Unit : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        print(gameObject.name + ": " + Health);
-        
+
         if (Health <= 0)
         {
             StartCoroutine(Die());
@@ -32,12 +31,12 @@ public class Unit : MonoBehaviour
     protected IEnumerator Die()
     {
         Animator.SetTrigger("die");
-        print(gameObject.name + " died");
+        yield return new WaitUntil(() => Animator.GetCurrentAnimatorStateInfo(0).IsName(""));
         Destroy(gameObject);
         yield return null;
     }
 
-    protected IEnumerator Recharge()
+    protected virtual IEnumerator Recharge()
     {
         yield return new WaitForSeconds(RechargeTime);
         IsRecharged = true;
