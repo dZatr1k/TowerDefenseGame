@@ -13,7 +13,7 @@ public class Thrower : Hero
     protected Vector2 _colliderOffset = new Vector2(6f, 0.55f);
     protected Vector2 _colliderSize = new Vector2(12, 1);
     protected Vector3 _weaponSpawnPos = new Vector3(0.85f, 0.4f, 0);
-    protected Quaternion _weaponSpawnAngle = Quaternion.identity;
+    protected Quaternion _weaponSpawnAngle = Quaternion.Euler(0, 0, -67);
 
     public int GetDamageInfo => Damage;
 
@@ -62,5 +62,4 @@ public class Thrower : Hero
         IsRecharged = true;
         CreateCurrentWeapon();
     }
-
 }

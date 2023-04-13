@@ -22,7 +22,7 @@ public class ThrowingWeapon : MonoBehaviour
             transform.position += Vector3.right * (Speed * Time.deltaTime);
         }
     }
-    protected virtual void OnTriggerStay2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out Enemy enemy))
         {

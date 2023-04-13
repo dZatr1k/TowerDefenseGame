@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 1275950612766427262}
   - component: {fileID: 3260037329403779300}
   - component: {fileID: 5006157637896387361}
-  - component: {fileID: 7335045980099197832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u0421ell"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1623884889275321930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
