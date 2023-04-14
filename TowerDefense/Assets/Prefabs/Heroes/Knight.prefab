@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7244624742180907367}
   - component: {fileID: 8904846424511723561}
   - component: {fileID: 6715775662772942567}
+  - component: {fileID: 1539756928}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -239,3 +240,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1539756928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244624742180907364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6729d7e8bc7e264b9de82dd1e843ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 2000
+  Damage: 0
+  RechargeTime: 0
+  _reloadTime: 1.5

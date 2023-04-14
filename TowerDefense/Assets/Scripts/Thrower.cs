@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Thrower : Hero
 {
-    [SerializeField] GameObject _weaponPrefab;
+    [SerializeField] protected GameObject _weaponPrefab;
     protected Animator _weaponAnimator;
     protected GameObject _currentWeapon;
 
@@ -22,6 +22,7 @@ public class Thrower : Hero
         SetThrowRangeSettings();
         _currentWeapon = GetComponentInChildren<ThrowingWeapon>().gameObject;
         _weaponAnimator = _currentWeapon.GetComponentInChildren<Animator>();
+
     }
 
     protected void SetThrowRangeSettings()
@@ -44,7 +45,7 @@ public class Thrower : Hero
         StartCoroutine(Recharge());
     }
 
-    protected void CreateCurrentWeapon()
+    protected virtual void CreateCurrentWeapon()
     {
         _currentWeapon = Instantiate(_weaponPrefab, transform.position + _weaponSpawnPos, _weaponSpawnAngle, transform);
         _weaponAnimator = _currentWeapon.GetComponentInChildren<Animator>();
