@@ -6,13 +6,11 @@ public class ThrowingWeapon : MonoBehaviour
 
     protected int _damage;
     protected bool _isThrowed = false;
-    protected SpriteRenderer _renderer;
 
 
     protected virtual void Start()
     {
         _damage = GetComponentInParent<Thrower>().GetDamageInfo;
-        _renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()

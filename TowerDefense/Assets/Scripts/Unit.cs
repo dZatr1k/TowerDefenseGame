@@ -29,6 +29,11 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public virtual void Stun(float time)
+    {
+        StartCoroutine(StopForSeconds(time));
+    }
+
     protected IEnumerator Die()
     {
         Animator.SetTrigger("die");
@@ -41,5 +46,10 @@ public class Unit : MonoBehaviour
     {
         yield return new WaitForSeconds(RechargeTime);
         IsRecharged = true;
+    }
+
+    protected virtual IEnumerator StopForSeconds(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 }

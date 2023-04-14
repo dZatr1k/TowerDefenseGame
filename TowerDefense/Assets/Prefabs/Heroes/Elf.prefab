@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7239285318237858214}
   - component: {fileID: 525885657516860891}
   - component: {fileID: 244100076306293882}
-  - component: {fileID: 91781504}
+  - component: {fileID: 6095545901244122316}
   m_Layer: 0
   m_Name: Elf
   m_TagString: Untagged
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &91781504
+--- !u!114 &6095545901244122316
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,14 +165,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7239285318237858213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88eb6603b76718d429ecf7914b4abb09, type: 3}
+  m_Script: {fileID: 11500000, guid: 75e7a0ecd38ee304e80b89d711c6b081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 0
-  Damage: 2
-  RechargeTime: 2
+  Damage: 1
+  RechargeTime: 1.5
   _reloadTime: 1.5
   _weaponPrefab: {fileID: 8443489387762531137, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
+  _stunTime: 0.6
 --- !u!1001 &413026490139481467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -228,10 +229,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Molot
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6350216232336516155, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
+    - {fileID: 4536009191629830380, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
 --- !u!4 &1910453085921845030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2249573930274425437, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
   m_PrefabInstance: {fileID: 413026490139481467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8112691275184647738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8443489387762531137, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
+  m_PrefabInstance: {fileID: 413026490139481467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &850998072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8112691275184647738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76b7a0a604a5ba458fe94e96db271b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
