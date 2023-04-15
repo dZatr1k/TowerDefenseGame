@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : Unit
@@ -41,5 +42,12 @@ public class Enemy : Unit
 
             StartCoroutine(Recharge());
         }
+    }
+
+    protected override IEnumerator StopForSeconds(float time)
+    {
+        _isWalking = false;
+        yield return new WaitForSeconds(time);
+        _isWalking = true;
     }
 }

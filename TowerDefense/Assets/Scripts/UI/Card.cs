@@ -7,9 +7,9 @@ public class Card : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private SelectedCardRouter _router;
     [SerializeField] private GameObject _heroPrefab;
+    [SerializeField] private Image _heroImage;
 
     private Slider _reloadSlider;
-    private Image _cardImage;
     private float _reloadTime;
     private bool _isSelected = false;
     private bool _isReloading = false;
@@ -18,12 +18,14 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        _cardImage = GetComponent<Image>();
+        _heroImage.sprite = _heroPrefab.GetComponent<SpriteRenderer>().sprite;
+
         if(_heroPrefab.TryGetComponent(out Hero hero))
         {
             _reloadTime = hero.ReloadTime;
         }
-        _reloadSlider = GetComponent<Slider>();
+
+        _reloadSlider = GetComponentInChildren<Slider>();
     }
 
     public void OnPointerClick(PointerEventData eventData)

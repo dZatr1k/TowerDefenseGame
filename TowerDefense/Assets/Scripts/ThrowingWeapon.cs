@@ -2,17 +2,15 @@ using UnityEngine;
 
 public class ThrowingWeapon : MonoBehaviour
 {
-    [SerializeField] private float Speed = 2;
+    [SerializeField] protected float Speed = 2;
 
     protected int _damage;
     protected bool _isThrowed = false;
-    protected SpriteRenderer _renderer;
 
 
-    private void Start()
+    protected virtual void Start()
     {
         _damage = GetComponentInParent<Thrower>().GetDamageInfo;
-        _renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -22,14 +20,14 @@ public class ThrowingWeapon : MonoBehaviour
             transform.position += Vector3.right * (Speed * Time.deltaTime);
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out Enemy enemy))
         {
             Attack(enemy);
         }
 
-        if (!_renderer.isVisible)
+        if (other.tag == "WeaponBlocker")
         {
             Destroy(gameObject);
         }
@@ -41,5 +39,5 @@ public class ThrowingWeapon : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Throw() { _isThrowed = true; print("True"); }
+    public void Throw() { _isThrowed = true; }
 }

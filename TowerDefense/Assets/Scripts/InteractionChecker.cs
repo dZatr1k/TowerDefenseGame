@@ -12,7 +12,7 @@ public class InteractionChecker : MonoBehaviour
         Vector3 mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 10f);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero, 10f, layerMask:LayerMask.GetMask("Field"));
 
             if (hit.collider != null)
             {
