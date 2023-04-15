@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 405079871978370587}
   - component: {fileID: 6839797584744545906}
   - component: {fileID: 2431287799647262786}
+  - component: {fileID: 2864354013693573958}
   m_Layer: 0
   m_Name: MaskedOrc
   m_TagString: Untagged
@@ -154,3 +155,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2864354013693573958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405079871978370584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1779c513129eda46babb4ccaf07c7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 500
+  Damage: 100
+  RechargeTime: 1
+  Speed: 0.5

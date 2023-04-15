@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3725938255131790179}
   - component: {fileID: 2845375298750032735}
   - component: {fileID: 2820796779583398095}
+  - component: {fileID: -4472372826352067461}
   m_Layer: 0
   m_Name: Swampy
   m_TagString: Untagged
@@ -154,3 +155,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-4472372826352067461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725938255131790178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e58ce57e5ea67734092da0f58804be6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 200
+  Damage: 100
+  RechargeTime: 1
+  Speed: 0.5

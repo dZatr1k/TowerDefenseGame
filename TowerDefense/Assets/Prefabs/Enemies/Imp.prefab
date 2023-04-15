@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4034292018273753129}
   - component: {fileID: 8525005395956581517}
   - component: {fileID: 3398651315578079602}
+  - component: {fileID: 4615871441605345416}
   m_Layer: 0
   m_Name: Imp
   m_TagString: Untagged
@@ -154,3 +155,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4615871441605345416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4034292018273753130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94435fb244109c743a467049af2aba45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  Damage: 70
+  RechargeTime: 1
+  Speed: 1

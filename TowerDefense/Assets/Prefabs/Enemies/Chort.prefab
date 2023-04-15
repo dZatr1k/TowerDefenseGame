@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5451588897644918727}
   - component: {fileID: 6359720068384620727}
   - component: {fileID: 7853505883937564213}
+  - component: {fileID: -3641280205829490662}
   m_Layer: 0
   m_Name: Chort
   m_TagString: Untagged
@@ -154,3 +155,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3641280205829490662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5451588897644918728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e2a422f24cbc0479331c6fc40c92f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 400
+  Damage: 100
+  RechargeTime: 1
+  Speed: 1

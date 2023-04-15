@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3855760148291901480}
   - component: {fileID: 1019065885331877608}
   - component: {fileID: 999771852476984404}
+  - component: {fileID: -2870407565806017568}
   m_Layer: 0
   m_Name: TinyZombie
   m_TagString: Untagged
@@ -154,3 +155,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2870407565806017568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855760148291901481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31162c5358234b44b9a68c00716f2ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 150
+  Damage: 90
+  RechargeTime: 1
+  Speed: 0.8
