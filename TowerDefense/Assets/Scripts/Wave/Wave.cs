@@ -3,13 +3,16 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-    [SerializeField] private SubWave[] _subWaves;
     [SerializeField] private float _duration = 0;
+    
+    private SubWave[] _subWaves;
 
     public float Durration => _duration;
 
     private void Awake()
     {
+        _subWaves = GetComponentsInChildren<SubWave>();
+
         foreach (var subWave in _subWaves)
         {
             _duration += subWave.Duration;

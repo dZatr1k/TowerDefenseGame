@@ -3,11 +3,14 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
-    [SerializeField] private Wave[] _waves;
-    [SerializeField] private EnemySpawner _spawner;
+    private EnemySpawner _spawner;
+    private Wave[] _waves;
 
     private void Start()
     {
+        _waves = GetComponentsInChildren<Wave>();
+        _spawner = FindObjectOfType<EnemySpawner>();
+
         StartCoroutine(StartLoop());
     }
 
