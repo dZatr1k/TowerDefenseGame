@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class WildDino : Thrower
 {
     private List<GameObject> _currentWeapons = new List<GameObject>();
     private List<Animator> _currentWeaponsAnimators = new List<Animator>();
+    protected Quaternion _secondWeaponSpawnAngle = Quaternion.Euler(0, 0, -80);
+    protected Vector3 _secondWeaponSpawnPos = new Vector3(0.85f, 0.32f, 0);
 
     protected override void Start()
     {
@@ -15,9 +18,7 @@ public class WildDino : Thrower
         for (int i = 0; i < trowingWeapons.Length; i++)
         {
             GameObject tomahawk = trowingWeapons[i].gameObject;
-            print(_currentWeapons);
             _currentWeapons.Add(tomahawk);
-
             _currentWeaponsAnimators.Add(tomahawk.GetComponentInChildren<Animator>());
         }
     }
@@ -27,18 +28,19 @@ public class WildDino : Thrower
         IsRecharged = false;
         Animator.SetTrigger("attack");
 
-        for (int i = 0; i < _currentWeapons.Count; i++)
-        {
-            _currentWeaponsAnimators[i].SetTrigger("throw");
-            _currentWeapons[i].GetComponent<ThrowingWeapon>().Throw();
-            StartCoroutine(IntervalThrows());
-        }
+        StartCoroutine(IntervalThrows());
         StartCoroutine(Recharge());
     }
 
     protected override void CreateCurrentWeapon()
     {
-        GameObject newTomahawk = Instantiate(_weaponPrefab, transform.position + _weaponSpawnPos, _weaponSpawnAngle, transform);
+        GameObject newTomahawk;
+        if (_currentWeapons.Count == 0)
+            newTomahawk = Instantiate(_weaponPrefab, transform.position + _weaponSpawnPos, _weaponSpawnAngle, transform);
+        else
+            newTomahawk = Instantiate(_weaponPrefab, transform.position + _secondWeaponSpawnPos, _secondWeaponSpawnAngle, transform);
+
+
         _currentWeapons.Add(newTomahawk);
         _currentWeaponsAnimators.Add(newTomahawk.GetComponentInChildren<Animator>());
     }
@@ -50,13 +52,18 @@ public class WildDino : Thrower
 
         yield return new WaitForSeconds(RechargeTime);
         CreateCurrentWeapon();
-        yield return new WaitForSeconds(0.7f);
         CreateCurrentWeapon();
         IsRecharged = true;
     }
 
     private IEnumerator IntervalThrows()
     {
-        yield return new WaitForSeconds(1);
+        for (int i = 0; i < _currentWeapons.Count; i++)
+        {
+            //Debug.Log(_currentWeapons[i]);
+            _currentWeaponsAnimators[i].SetTrigger("throw");
+            _currentWeapons[i].GetComponent<ThrowingWeapon>().Throw();
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

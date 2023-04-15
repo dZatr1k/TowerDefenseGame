@@ -10,8 +10,8 @@ public class Thrower : Hero
     protected GameObject _throwRange;
     protected BoxCollider2D _throwRangeCollider;
 
-    protected Vector2 _colliderOffset = new Vector2(6f, 0.55f);
-    protected Vector2 _colliderSize = new Vector2(12, 1);
+    protected Vector2 _colliderOffset = new Vector2(8f, 0.55f);
+    protected Vector2 _colliderSize = new Vector2(15, 1);
     protected Vector3 _weaponSpawnPos = new Vector3(0.85f, 0.4f, 0);
     protected Quaternion _weaponSpawnAngle = Quaternion.Euler(0, 0, -67);
 
@@ -40,8 +40,8 @@ public class Thrower : Hero
     {
         IsRecharged = false;
         Animator.SetTrigger("attack");
-        _weaponAnimator.SetTrigger("throw");
-        _currentWeapon.GetComponent<ThrowingWeapon>().Throw();
+        _weaponAnimator?.SetTrigger("throw");
+        _currentWeapon.GetComponent<ThrowingWeapon>()?.Throw();
         StartCoroutine(Recharge());
     }
 
