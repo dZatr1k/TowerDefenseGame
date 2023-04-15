@@ -27,7 +27,6 @@ public class WildDino : Thrower
     {
         IsRecharged = false;
         Animator.SetTrigger("attack");
-
         StartCoroutine(IntervalThrows());
         StartCoroutine(Recharge());
     }
@@ -47,10 +46,10 @@ public class WildDino : Thrower
 
     protected override IEnumerator Recharge()
     {
+        yield return new WaitForSeconds(RechargeTime);
         _currentWeapons = new List<GameObject>();
         _currentWeaponsAnimators = new List<Animator>();
 
-        yield return new WaitForSeconds(RechargeTime);
         CreateCurrentWeapon();
         CreateCurrentWeapon();
         IsRecharged = true;
@@ -60,7 +59,6 @@ public class WildDino : Thrower
     {
         for (int i = 0; i < _currentWeapons.Count; i++)
         {
-            //Debug.Log(_currentWeapons[i]);
             _currentWeaponsAnimators[i].SetTrigger("throw");
             _currentWeapons[i].GetComponent<ThrowingWeapon>().Throw();
             yield return new WaitForSeconds(0.1f);

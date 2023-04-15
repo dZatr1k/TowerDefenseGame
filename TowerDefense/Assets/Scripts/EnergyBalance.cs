@@ -13,7 +13,7 @@ public class EnergyBalance : MonoBehaviour
         OnBalanceChange?.Invoke(_energyBalance);
     }
 
-    public void SubtractBalance(uint amount)
+    public void DegreaseBalance(uint amount)
     {
         if (_energyBalance - amount >= 0)
         {

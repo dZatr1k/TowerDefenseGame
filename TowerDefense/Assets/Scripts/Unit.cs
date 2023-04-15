@@ -23,9 +23,9 @@ public class Unit : MonoBehaviour
         Health -= damage;
 
         if (Health <= 0)
-        {
             StartCoroutine(Die());
-        }
+        else
+            Animator.SetTrigger("damaged");
     }
 
     public virtual void Stun(float time)
