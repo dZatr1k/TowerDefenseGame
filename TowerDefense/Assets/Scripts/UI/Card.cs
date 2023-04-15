@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -15,6 +16,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
     private bool _isReloading = false;
 
     public GameObject HeroPrefab => _heroPrefab;
+    
 
     private void Start()
     {

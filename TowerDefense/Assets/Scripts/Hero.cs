@@ -7,6 +7,7 @@ public class Hero : Unit
 
     public float ReloadTime => _reloadTime;
     public event Action OnHeroDie;
+    public event Action<bool> OnSlowed;
 
     private void OnTriggerStay2D(Collider2D other)
     {

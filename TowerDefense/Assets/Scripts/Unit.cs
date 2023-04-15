@@ -36,7 +36,7 @@ public class Unit : MonoBehaviour
     protected IEnumerator Die()
     {
         Animator.SetTrigger("die");
-        yield return new WaitUntil(() => Animator.GetCurrentAnimatorStateInfo(0).IsName(""));
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
         yield return null;
     }
