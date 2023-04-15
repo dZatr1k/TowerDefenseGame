@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
 --- !u!1001 &532171504
@@ -235,6 +239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer
       objectReference: {fileID: 0}
+    - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
 --- !u!1001 &581511405
@@ -291,6 +299,10 @@ PrefabInstance:
     - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
       propertyPath: m_Name
       value: Necromancer (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
@@ -351,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727531101543341159, guid: b37731a22f6be344abb3cd53ae797dc7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37731a22f6be344abb3cd53ae797dc7, type: 3}
@@ -409,6 +421,10 @@ PrefabInstance:
     - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
       propertyPath: m_Name
       value: Necromancer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
@@ -585,6 +601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
 --- !u!1001 &1063879168
@@ -600,7 +620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7244624742180907364, guid: 136b2e3a07aab0644b28ab8bdda43681, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7244624742180907366, guid: 136b2e3a07aab0644b28ab8bdda43681, type: 3}
       propertyPath: m_RootOrder
@@ -703,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
 --- !u!1001 &1354364823
@@ -760,6 +784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Necromancer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2505149253726281214, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6703cf2b923bb8940a0ceb3f502122bf, type: 3}
 --- !u!1001 &1451194922
@@ -775,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7244624742180907364, guid: 136b2e3a07aab0644b28ab8bdda43681, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7244624742180907366, guid: 136b2e3a07aab0644b28ab8bdda43681, type: 3}
       propertyPath: m_RootOrder
@@ -920,7 +948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2789735081633141464, guid: 16c30629af883a14794de4d14368efe5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2789735081633141470, guid: 16c30629af883a14794de4d14368efe5, type: 3}
       propertyPath: m_RootOrder
@@ -1036,6 +1064,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1877626190908987268, guid: 3314560496985c241847ab4f745354f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 6277536590258424536, guid: 3314560496985c241847ab4f745354f2, type: 3}
       propertyPath: m_Name
       value: WildDino

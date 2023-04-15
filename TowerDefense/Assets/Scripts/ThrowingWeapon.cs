@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ThrowingWeapon : MonoBehaviour
 {
-    [SerializeField] protected float Speed = 2;
+    [SerializeField] protected float Speed = 4;
 
     protected int _damage;
     protected bool _isThrowed = false;
