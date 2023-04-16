@@ -7,7 +7,7 @@ public class Wave : MonoBehaviour
     
     private SubWave[] _subWaves;
 
-    public float Durration => _duration;
+    public float Duration => _duration;
 
     private void Awake()
     {

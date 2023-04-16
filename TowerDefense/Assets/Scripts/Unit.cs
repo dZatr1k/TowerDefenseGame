@@ -1,11 +1,11 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
+using UnityEngine.Events;
 
 public class Unit : MonoBehaviour
 {
+    public UnityAction OnDied;
+
     [SerializeField] protected int Health;
     [SerializeField] protected int Damage;
     [SerializeField] protected float RechargeTime;
@@ -38,6 +38,7 @@ public class Unit : MonoBehaviour
         Animator.SetTrigger("die");
         yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
+        OnDied?.Invoke();
         yield return null;
     }
 

@@ -6,7 +6,6 @@ public class Hero : Unit
     [SerializeField] private float _reloadTime = 1.5f;
 
     public float ReloadTime => _reloadTime;
-    public event Action OnHeroDie;
     public event Action<bool> OnSlowed;
 
     private void OnCollisionStay2D(Collision2D collision)

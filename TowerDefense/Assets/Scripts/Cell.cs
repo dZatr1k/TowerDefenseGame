@@ -11,12 +11,12 @@ public class Cell : MonoBehaviour
     public void SetHero(Hero hero)
     {
         _hero = hero;
-        _hero.OnHeroDie += RemoveHero;      
+        _hero.OnDied += RemoveHero;      
     }
 
     private void RemoveHero()
     {
-        _hero.OnHeroDie -= RemoveHero;
+        _hero.OnDied -= RemoveHero;
         _hero = null;
     }
 
