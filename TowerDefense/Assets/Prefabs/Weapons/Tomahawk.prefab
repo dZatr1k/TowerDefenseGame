@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 526326812012879912}
   - component: {fileID: 1032961333728626870}
   - component: {fileID: 6603943657388297080}
-  - component: {fileID: 5125417975214676564}
+  - component: {fileID: 1180154168748066857}
   m_Layer: 0
   m_Name: Tomahawk
   m_TagString: Untagged
@@ -187,7 +187,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 0.55}
   m_EdgeRadius: 0
---- !u!114 &5125417975214676564
+--- !u!114 &1180154168748066857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8201834785230928458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff94cd5066e53bc44b1032d892c9324b, type: 3}
+  m_Script: {fileID: 11500000, guid: 509db84646f355149862ae2cababde02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5.5
+  Speed: 4

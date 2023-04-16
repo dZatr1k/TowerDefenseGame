@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,8 +58,11 @@ public class WildDino : Thrower
     {
         for (int i = 0; i < _currentWeapons.Count; i++)
         {
-            _currentWeaponsAnimators[i].SetTrigger("throw");
-            _currentWeapons[i].GetComponent<HeroThrowingWeapon>().Throw();
+            if (_currentWeaponsAnimators[i] && _currentWeapons[i])
+            {
+                _currentWeaponsAnimators[i].SetTrigger("throw");
+                _currentWeapons[i].GetComponent<HeroThrowingWeapon>().Throw();
+            }
             yield return new WaitForSeconds(0.1f);
         }
     }

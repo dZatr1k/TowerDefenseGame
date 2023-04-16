@@ -48,8 +48,11 @@ public class Thrower : Hero
     {
         IsRecharged = false;
         Animator.SetTrigger("attack");
-        _weaponAnimator?.SetTrigger("throw");
-        _currentWeapon.GetComponent<HeroThrowingWeapon>()?.Throw();
+        if (_weaponAnimator && _currentWeapon)
+        {
+            _weaponAnimator.SetTrigger("throw");
+            _currentWeapon.GetComponent<HeroThrowingWeapon>()?.Throw();
+        }
         StartCoroutine(Recharge());
     }
 
