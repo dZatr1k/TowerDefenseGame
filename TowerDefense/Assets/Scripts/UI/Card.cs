@@ -30,6 +30,11 @@ public class Card : MonoBehaviour, IPointerClickHandler
         _reloadSlider = GetComponentInChildren<Slider>();
     }
 
+    public void ChangeHeroPrefab(GameObject newHero)
+    {
+        _heroPrefab = newHero;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (_isReloading == false)

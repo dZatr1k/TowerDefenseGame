@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
 public class MenuCard : MonoBehaviour, IPointerClickHandler
 {
+    public static UnityAction OnCardClick;
+
     [SerializeField] private GameObject _cardPoints;
     [SerializeField] private GameObject _heroPrefab;
     [SerializeField] private Image _heroImage;
@@ -33,7 +36,8 @@ public class MenuCard : MonoBehaviour, IPointerClickHandler
                     _rectTransform.DOMove(_points[i].RectTransform.position, 0.1f);
                     _points[i].IsOccupied = true;
                     _selectedPoint = _points[i];
-                    return;
+                    _selectedPoint.SetHeroPrefab(_heroPrefab);
+                    break;
                 }
             }
         }
@@ -41,7 +45,10 @@ public class MenuCard : MonoBehaviour, IPointerClickHandler
         {
             _rectTransform.DOMove(_startPosition, 0.1f);
             _selectedPoint.IsOccupied = false;
+            _selectedPoint.SetHeroPrefab(null);
             _selectedPoint = null;
         }
+
+        OnCardClick?.Invoke();
     }
 }
