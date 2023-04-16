@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Molot : ThrowingWeapon
+public class Molot : HeroThrowingWeapon
 {
     private float _stunTime;
 

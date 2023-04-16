@@ -1,12 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Swampy : Enemy
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        print(other.name);
+        if (other.TryGetComponent(out Hero hero))
+        {
+            hero.Slow(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out Hero hero) && other.isActiveAndEnabled)
+        {
+            hero.Slow(false);
+        }
     }
 }

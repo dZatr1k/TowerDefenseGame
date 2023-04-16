@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ThrowingWeapon : MonoBehaviour
+public class HeroThrowingWeapon : MonoBehaviour
 {
     [SerializeField] protected float Speed = 4;
 

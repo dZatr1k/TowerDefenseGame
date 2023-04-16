@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +12,7 @@ public class WildDino : Thrower
     protected override void Start()
     {
         SetThrowRangeSettings();
-        ThrowingWeapon[] trowingWeapons = GetComponentsInChildren<ThrowingWeapon>();
+        HeroThrowingWeapon[] trowingWeapons = GetComponentsInChildren<HeroThrowingWeapon>();
 
         for (int i = 0; i < trowingWeapons.Length; i++)
         {
@@ -59,8 +58,11 @@ public class WildDino : Thrower
     {
         for (int i = 0; i < _currentWeapons.Count; i++)
         {
-            _currentWeaponsAnimators[i].SetTrigger("throw");
-            _currentWeapons[i].GetComponent<ThrowingWeapon>().Throw();
+            if (_currentWeaponsAnimators[i] && _currentWeapons[i])
+            {
+                _currentWeaponsAnimators[i].SetTrigger("throw");
+                _currentWeapons[i].GetComponent<HeroThrowingWeapon>().Throw();
+            }
             yield return new WaitForSeconds(0.1f);
         }
     }
