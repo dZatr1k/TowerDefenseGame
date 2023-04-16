@@ -4,6 +4,11 @@ public class LevelDataChanger : MonoBehaviour
 {
     [SerializeField] private CardPointsChecker _cardPointsChecker;
 
+    public void ChangeLevelIndex(int newIndex)
+    {
+        LevelData.LevelIndex = newIndex;
+    }
+
     public void ChangeWavePrefab(GameObject leveWaves)
     {
         LevelData.LevelWavesPrefab = leveWaves;
