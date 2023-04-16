@@ -13,7 +13,7 @@ public class WildDino : Thrower
     protected override void Start()
     {
         SetThrowRangeSettings();
-        ThrowingWeapon[] trowingWeapons = GetComponentsInChildren<ThrowingWeapon>();
+        HeroThrowingWeapon[] trowingWeapons = GetComponentsInChildren<HeroThrowingWeapon>();
 
         for (int i = 0; i < trowingWeapons.Length; i++)
         {
@@ -60,7 +60,7 @@ public class WildDino : Thrower
         for (int i = 0; i < _currentWeapons.Count; i++)
         {
             _currentWeaponsAnimators[i].SetTrigger("throw");
-            _currentWeapons[i].GetComponent<ThrowingWeapon>().Throw();
+            _currentWeapons[i].GetComponent<HeroThrowingWeapon>().Throw();
             yield return new WaitForSeconds(0.1f);
         }
     }

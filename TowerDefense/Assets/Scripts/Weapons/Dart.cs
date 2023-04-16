@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Dart : ThrowingWeapon
+public class Dart : HeroThrowingWeapon
 {
     protected override void Attack(Enemy enemy)
     {

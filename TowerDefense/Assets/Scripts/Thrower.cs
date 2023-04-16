@@ -20,7 +20,7 @@ public class Thrower : Hero
     protected virtual void Start()
     {
         SetThrowRangeSettings();
-        _currentWeapon = GetComponentInChildren<ThrowingWeapon>().gameObject;
+        _currentWeapon = GetComponentInChildren<HeroThrowingWeapon>().gameObject;
         _weaponAnimator = _currentWeapon.GetComponentInChildren<Animator>();
 
     }
@@ -49,7 +49,7 @@ public class Thrower : Hero
         IsRecharged = false;
         Animator.SetTrigger("attack");
         _weaponAnimator?.SetTrigger("throw");
-        _currentWeapon.GetComponent<ThrowingWeapon>()?.Throw();
+        _currentWeapon.GetComponent<HeroThrowingWeapon>()?.Throw();
         StartCoroutine(Recharge());
     }
 

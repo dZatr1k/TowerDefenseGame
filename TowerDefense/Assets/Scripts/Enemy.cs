@@ -5,7 +5,9 @@ public class Enemy : Unit
 {
     [SerializeField] protected float Speed;
 
-    private bool _isWalking = true;
+    protected bool _isWalking = true;
+    
+    public int GetDamageInfo => Damage;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -32,13 +34,13 @@ public class Enemy : Unit
         }
     }
 
-    protected virtual void Attack(Unit unit)
+    protected virtual void Attack(Hero hero)
     {
         if (IsRecharged)
         {
             IsRecharged = false;
             Animator.SetTrigger("attack");
-            unit.TakeDamage(Damage);
+            hero.TakeDamage(Damage);
 
             StartCoroutine(Recharge());
         }
