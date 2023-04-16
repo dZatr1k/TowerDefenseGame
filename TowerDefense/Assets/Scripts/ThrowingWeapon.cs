@@ -25,6 +25,9 @@ public class ThrowingWeapon : MonoBehaviour
         if (col.gameObject.TryGetComponent(out Enemy enemy))
         {
             Attack(enemy);
+        }
+        if (col.gameObject.tag == "WeaponBlocker")
+        {
             Destroy(gameObject);
         }
     }
