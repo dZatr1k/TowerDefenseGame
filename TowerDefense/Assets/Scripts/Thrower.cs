@@ -35,6 +35,14 @@ public class Thrower : Hero
         _throwRangeCollider.offset = _colliderOffset;
         _throwRangeCollider.size = _colliderSize;
     }
+    
+    protected virtual void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out Enemy enemy) && IsRecharged && !other.isTrigger) 
+        {
+            Attack(enemy);
+        }
+    }
 
     protected override void Attack(Enemy enemy)
     {

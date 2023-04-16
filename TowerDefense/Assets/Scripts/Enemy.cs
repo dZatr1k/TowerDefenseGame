@@ -7,16 +7,16 @@ public class Enemy : Unit
 
     private bool _isWalking = true;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (other.gameObject.TryGetComponent(out Hero hero))
+        if (collision.gameObject.TryGetComponent(out Hero hero))
         {
             _isWalking = false;
             Attack(hero);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.TryGetComponent(out Hero hero))
         {

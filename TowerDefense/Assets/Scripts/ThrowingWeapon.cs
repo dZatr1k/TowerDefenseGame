@@ -20,14 +20,13 @@ public class ThrowingWeapon : MonoBehaviour
             transform.position += Vector3.right * (Speed * Time.deltaTime);
         }
     }
-    protected virtual void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnCollisionEnter2D(Collision2D col)
     {
-        if (other.TryGetComponent(out Enemy enemy))
+        if (col.gameObject.TryGetComponent(out Enemy enemy))
         {
             Attack(enemy);
         }
-
-        if (other.tag == "WeaponBlocker")
+        if (col.gameObject.tag == "WeaponBlocker")
         {
             Destroy(gameObject);
         }

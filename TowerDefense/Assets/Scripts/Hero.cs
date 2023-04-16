@@ -9,9 +9,9 @@ public class Hero : Unit
     public event Action OnHeroDie;
     public event Action<bool> OnSlowed;
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (other.TryGetComponent(out Enemy enemy) && IsRecharged)
+        if (collision.gameObject.TryGetComponent(out Enemy enemy) && IsRecharged)
         {
             Attack(enemy);
         }
