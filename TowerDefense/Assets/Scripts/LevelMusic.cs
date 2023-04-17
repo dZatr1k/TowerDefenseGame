@@ -4,6 +4,8 @@ public class LevelMusic : MonoBehaviour
 {
     private void Start()
     {
-        Destroy(FindObjectOfType<MenuMusic>().gameObject);
+        var menuMusic = FindObjectOfType<MenuMusic>();
+        if(menuMusic != null)
+            Destroy(menuMusic.gameObject);
     }
 }
