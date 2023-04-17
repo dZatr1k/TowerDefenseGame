@@ -1,14 +1,15 @@
 using System;
-using UnityEditor;
 using UnityEngine;
 
 public class Hero : Unit
 {
     [SerializeField] private float _reloadTime = 1.5f;
+    [SerializeField] private int _cost;
+    private bool isSlowed = false;
 
+    public int Cost => _cost;
     public float ReloadTime => _reloadTime;
     public event Action OnHeroDie;
-    private bool isSlowed = false;
 
     private void OnCollisionStay2D(Collision2D collision)
     {

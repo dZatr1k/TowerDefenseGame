@@ -15,6 +15,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
     private bool _isSelected = false;
     private bool _isReloading = false;
 
+    private EnergyResources _energyResources;
     public GameObject HeroPrefab => _heroPrefab;
     
 
@@ -26,8 +27,9 @@ public class Card : MonoBehaviour, IPointerClickHandler
         {
             _reloadTime = hero.ReloadTime;
         }
-
         _reloadSlider = GetComponentInChildren<Slider>();
+
+        _energyResources = FindObjectOfType<EnergyResources>();
     }
 
     public void ChangeHeroPrefab(GameObject newHero)
@@ -60,9 +62,12 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     public void Select()
     {
-        _isSelected = true;
-        _router.ChangeSelectedHero(GetComponent<Card>());
-        _reloadSlider.value = 1;
+        if (_energyResources.TrySelect(_heroPrefab.GetComponent<Hero>().Cost))
+        {
+            _isSelected = true;
+            _router.ChangeSelectedHero(GetComponent<Card>());
+            _reloadSlider.value = 1;
+        }
     }
 
     public IEnumerator Reload()

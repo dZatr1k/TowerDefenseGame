@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 8810536145697350523}
   - component: {fileID: 8810536145697350522}
   m_Layer: 0
-  m_Name: InterectionChecker
+  m_Name: Interections
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -172,6 +172,7 @@ MonoBehaviour:
   Damage: 30
   RechargeTime: 2
   _reloadTime: 1.5
+  _cost: 1
   _weaponPrefab: {fileID: 9148233123816613899, guid: 0f7ff91a85c7fc64c8125c2e21e13e41, type: 3}
 --- !u!1001 &3315361693036661820
 PrefabInstance:
