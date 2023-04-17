@@ -25,9 +25,14 @@ public class LevelDataChanger : MonoBehaviour
             return;
 
         var cardPoints = _cardPointsChecker.GetCardPoints();
-        LevelData.HeroPrefabs = new GameObject[cardPoints.Length];
+        int count;
+        if(cardPoints.Length >= UnlockCardsData.UnlockCardsCount)
+            count = UnlockCardsData.UnlockCardsCount;
+        else
+            count = cardPoints.Length;
+        LevelData.HeroPrefabs = new GameObject[count];
 
-        for (int i = 0; i < cardPoints.Length; i++)
+        for (int i = 0; i < count; i++)
         {
             LevelData.HeroPrefabs[i] = cardPoints[i].GetHeroPrefab();
         }

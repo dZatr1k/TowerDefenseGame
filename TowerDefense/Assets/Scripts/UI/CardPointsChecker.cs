@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +30,12 @@ public class CardPointsChecker : MonoBehaviour
 
     public void Check()
     {
-        for (int i = 0; i < _cardPoints.Length; i++)
+        int count;
+        if (_cardPoints.Length >= UnlockCardsData.UnlockCardsCount)
+            count = UnlockCardsData.UnlockCardsCount;
+        else
+            count = _cardPoints.Length;
+        for (int i = 0; i < count; i++)
         {
             if (_cardPoints[i].IsOccupied == false) 
             {

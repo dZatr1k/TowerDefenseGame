@@ -78,7 +78,10 @@ public class LevelEndChecker : MonoBehaviour
     private void CompleteLevel()
     {
         _levelCompletePanel.SetActive(true);
-        if(UnlockLevelData.UnlockLevelsCount == LevelData.LevelIndex)
+        if (UnlockLevelData.UnlockLevelsCount == LevelData.LevelIndex) 
+        {
+            UnlockCardsData.UnlockCardsCount++;
             UnlockLevelData.UnlockLevelsCount++;
+        }
     }
 }
