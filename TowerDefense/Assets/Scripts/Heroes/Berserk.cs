@@ -8,7 +8,8 @@ public class Berserk : Hero
 
     private void Start()
     {
-        _swordAnimator = GetComponentInChildren<Animator>();
+        Sword sword = GetComponentInChildren<Sword>();
+        _swordAnimator = sword.gameObject.GetComponent<Animator>();
     }
 
     private void OnCollisionStay2D(Collision2D collision) { }
