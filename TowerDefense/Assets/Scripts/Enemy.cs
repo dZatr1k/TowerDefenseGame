@@ -53,7 +53,7 @@ public class Enemy : Unit
         }
     }
 
-    protected override IEnumerator StopForSeconds(float time)
+    protected override IEnumerator WaitForSeconds(float time)
     {
         _isWalking = false;
         yield return new WaitForSeconds(time);

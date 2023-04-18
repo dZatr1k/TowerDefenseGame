@@ -46,14 +46,13 @@ public class Hero : Unit
     {
         if (isSlowed && !slow)
         {
-            print(gameObject.name + " Unslowed");
             RechargeTime = _standartRechargeTime;
             isSlowed = false;
         }
         else if (!isSlowed && slow)
         {
             print(gameObject.name + " Slowed");
-            RechargeTime *= 2;
+            RechargeTime *= 1.5f;
             isSlowed = true;
         }
     }
