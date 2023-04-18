@@ -13,7 +13,6 @@ public class Ogre : Enemy
     private float _y2 = -2.52f;
     private float _y1 = -3.86f;
     private float _x;
-    private int _line;
 
     void Start()
     {
