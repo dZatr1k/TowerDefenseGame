@@ -2,5 +2,5 @@ using UnityEngine;
 
 public static class UnlockLevelData
 {
-    public static int UnlockLevelsCount = 6;
+    public static int UnlockLevelsCount = 7;
 }

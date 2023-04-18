@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dc8b34f7a198e04f8ba744bd723fc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
+  Health: 100
   Damage: 0
   RechargeTime: 0
   _reloadTime: 1.5
