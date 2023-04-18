@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6499570153066865193}
   - component: {fileID: 1789489131387929938}
   - component: {fileID: 4947533106032569325}
+  - component: {fileID: -2227158484880312341}
   m_Layer: 0
   m_Name: BigDemon
   m_TagString: Untagged
@@ -154,3 +155,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2227158484880312341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499570153066865206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abde8eb8cf8cf3e49bc5b066d8f92dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 300
+  Damage: 200
+  RechargeTime: 1
+  Speed: 0.3
+  _spawnTime: 1
+  _topEnemy: {fileID: 5451588897644918728, guid: 0933c7dad9bffbc46aa8ff3bf18d5aed, type: 3}
+  _sideEnemy: {fileID: 4034292018273753130, guid: 7e9dfc8340a9325428c5e6a10ae1d0d5, type: 3}
