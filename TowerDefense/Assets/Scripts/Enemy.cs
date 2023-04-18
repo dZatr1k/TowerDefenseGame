@@ -10,6 +10,11 @@ public class Enemy : Unit
     
     public int GetDamageInfo => Damage;
 
+    private void Start()
+    {
+        Animator.SetTrigger("walk");
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Hero hero))
@@ -24,6 +29,7 @@ public class Enemy : Unit
         if (other.gameObject.TryGetComponent(out Hero hero))
         {
             _isWalking = true;
+            Animator.SetTrigger("walk");
         }
     }
 

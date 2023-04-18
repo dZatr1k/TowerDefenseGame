@@ -287,8 +287,9 @@ MonoBehaviour:
   Health: 0
   Damage: 0
   RechargeTime: 0
-  _reloadTime: 1.5
+  _reloadTime: 5
+  _cost: 1
   _energy: {fileID: 2011504847341744202, guid: 83d1a82de3382764bbcb9b7b34f43f5f, type: 3}
   _energySpawnPoint: {fileID: 1699642183901706428}
-  _minRecargeTime: 5
-  _maxRecargeTime: 7
+  _minRecargeTime: 15
+  _maxRecargeTime: 20

@@ -21,6 +21,7 @@ public class GameLoop : MonoBehaviour
     {
         foreach (var wave in _waves)
         {
+            yield return new WaitForSeconds(wave.PreWaveDuration);
             StartCoroutine(wave.StartWave(_spawner));
             yield return new WaitForSeconds(wave.Duration);
         }
