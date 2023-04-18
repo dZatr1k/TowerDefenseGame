@@ -37,7 +37,6 @@ public class KamikazeWizard : Hero
     protected override IEnumerator WaitForSeconds(float time)
     {
         yield return new WaitForSeconds(time);
-        _canComplate = true;
         Transform attackZoneTransform = _attackZoneCollider.gameObject.transform;
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(attackZoneTransform.position, _attackZoneCollider.size, 0, layerMask: LayerMask.GetMask("Default"));
         Attack(hitColliders);
