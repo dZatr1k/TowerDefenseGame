@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -962306597, guid: 983f4252534535445be1e841a6ac74dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -167,9 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659268c7afdaa5f4a9a4fd502c23335b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
-  Damage: 0
-  RechargeTime: 0
-  Speed: 0
-  _spawnTime: 1
-  _gameObject: {fileID: 0}
+  Health: 2000
+  Damage: 100
+  RechargeTime: 1
+  Speed: 0.4
+  _spawnTime: 5
+  _gameObject: {fileID: 405079871978370584, guid: fe7413ed3b64ae94f9602c12a740d18f, type: 3}
