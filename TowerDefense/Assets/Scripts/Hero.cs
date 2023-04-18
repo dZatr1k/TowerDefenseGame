@@ -5,12 +5,13 @@ public class Hero : Unit
 {
     [SerializeField] private float _reloadTime = 1.5f;
     [SerializeField] private int _cost;
+    [SerializeField] private AudioSource _source;
+
     private bool isSlowed = false;
     private float _standartRechargeTime;
 
     public int Cost => _cost;
     public float ReloadTime => _reloadTime;
-    public event Action OnHeroDie;
 
     private void OnEnable()
     {
@@ -65,5 +66,11 @@ public class Hero : Unit
     private void DiscardBoost()
     {
         RechargeTime = _standartRechargeTime;
+    }
+
+    public new void TakeDamage(int damage)
+    {
+        _source.Play();
+        base.TakeDamage(damage);
     }
 }

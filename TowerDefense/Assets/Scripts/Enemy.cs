@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Enemy : Unit
 {
     [SerializeField] protected float Speed;
+    [SerializeField] private AudioSource _source;
 
     protected bool _isWalking = true;
     
@@ -58,5 +59,11 @@ public class Enemy : Unit
         _isWalking = false;
         yield return new WaitForSeconds(time);
         _isWalking = true;
+    }
+
+    public new void TakeDamage(int damage)
+    {
+        _source.Play();
+        base.TakeDamage(damage);
     }
 }

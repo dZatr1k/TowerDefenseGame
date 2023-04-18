@@ -104,7 +104,7 @@ MonoBehaviour:
   - {fileID: 4615871441605345416, guid: 7e9dfc8340a9325428c5e6a10ae1d0d5, type: 3}
   - {fileID: -3641280205829490662, guid: 0933c7dad9bffbc46aa8ff3bf18d5aed, type: 3}
   - {fileID: -4921593620724275671, guid: 92a9d8b6950aac048b37d2c480cd9cae, type: 3}
-  _duration: 30
+  _duration: 40
 --- !u!1 &1535324915119444243
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   - {fileID: -3641280205829490662, guid: 0933c7dad9bffbc46aa8ff3bf18d5aed, type: 3}
   - {fileID: -3641280205829490662, guid: 0933c7dad9bffbc46aa8ff3bf18d5aed, type: 3}
   - {fileID: -3641280205829490662, guid: 0933c7dad9bffbc46aa8ff3bf18d5aed, type: 3}
-  - {fileID: -3641280205829490662, guid: 0933c7dad9bffbc46aa8ff3bf18d5aed, type: 3}
+  - {fileID: -2227158484880312341, guid: 5a100442b9133fe4dbd873d958f2bf55, type: 3}
   _duration: 5
 --- !u!1 &1819657824610436137
 GameObject:

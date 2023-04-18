@@ -57,7 +57,7 @@ public class LevelEndChecker : MonoBehaviour
         _diedEnemies++;
         if(_diedEnemies == _enemies.Length)
         {
-            CompleteLevel();
+            TryCompleteLevel();
         }
     }
 
