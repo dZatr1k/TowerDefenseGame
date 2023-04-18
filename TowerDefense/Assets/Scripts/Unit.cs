@@ -30,7 +30,7 @@ public class Unit : MonoBehaviour
 
     public virtual void Stun(float time)
     {
-        StartCoroutine(StopForSeconds(time));
+        StartCoroutine(WaitForSeconds(time));
     }
 
     protected virtual IEnumerator Die()
@@ -48,7 +48,7 @@ public class Unit : MonoBehaviour
         IsRecharged = true;
     }
 
-    protected virtual IEnumerator StopForSeconds(float time)
+    protected virtual IEnumerator WaitForSeconds(float time)
     {
         yield return new WaitForSeconds(time);
     }
