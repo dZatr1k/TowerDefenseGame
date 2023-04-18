@@ -175,6 +175,7 @@ MonoBehaviour:
   _cost: 3
   _weaponPrefab: {fileID: 8443489387762531137, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
   _stunTime: 0.6
+  _stunChance: 50
 --- !u!1001 &413026490139481467
 PrefabInstance:
   m_ObjectHideFlags: 0
