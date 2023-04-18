@@ -6,10 +6,25 @@ public class Hero : Unit
     [SerializeField] private float _reloadTime = 1.5f;
     [SerializeField] private int _cost;
     private bool isSlowed = false;
+    private float _standartRechargeTime;
 
     public int Cost => _cost;
     public float ReloadTime => _reloadTime;
     public event Action OnHeroDie;
+
+    private void OnEnable()
+    {
+        _standartRechargeTime = RechargeTime;
+
+        ElfPrinces.OnElfPrincesEnable += SetBoost;
+        ElfPrinces.OnElfPrincesDisable += DiscardBoost;
+    }
+
+    private void OnDisable()
+    {
+        ElfPrinces.OnElfPrincesEnable -= SetBoost;
+        ElfPrinces.OnElfPrincesDisable -= DiscardBoost;
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -32,7 +47,7 @@ public class Hero : Unit
         if (isSlowed && !slow)
         {
             print(gameObject.name + " Unslowed");
-            RechargeTime /= 2;
+            RechargeTime = _standartRechargeTime;
             isSlowed = false;
         }
         else if (!isSlowed && slow)
@@ -41,5 +56,15 @@ public class Hero : Unit
             RechargeTime *= 2;
             isSlowed = true;
         }
+    }
+
+    private void SetBoost(float boostPercent)
+    {
+        RechargeTime -= RechargeTime * boostPercent;
+    }
+
+    private void DiscardBoost()
+    {
+        RechargeTime = _standartRechargeTime;
     }
 }

@@ -33,7 +33,7 @@ public class Unit : MonoBehaviour
         StartCoroutine(StopForSeconds(time));
     }
 
-    protected IEnumerator Die()
+    protected virtual IEnumerator Die()
     {
         Animator.SetTrigger("die");
         yield return new WaitForSeconds(0.3f);

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3501933443299058632}
   - component: {fileID: 7364673459841333567}
   - component: {fileID: 9157669891253082271}
+  - component: {fileID: 3879040923527235516}
   m_Layer: 0
   m_Name: KamikazeWizard
   m_TagString: Untagged
@@ -155,6 +156,23 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &3879040923527235516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501933443299058629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b6f98a49e8ec84187a04bba8c064c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 0
+  Damage: 0
+  RechargeTime: 0
+  _reloadTime: 1.5
+  _cost: 0
 --- !u!1 &5108098396169239290
 GameObject:
   m_ObjectHideFlags: 0
