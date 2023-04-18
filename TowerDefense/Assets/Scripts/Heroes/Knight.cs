@@ -1,9 +1,4 @@
-using System;
-using UnityEngine;
-
-public class Knight : Hero
+public class Knight : NonAttackingHeroes
 {
-    protected void OnTriggerStay2D(Collider2D other) { }
 
-    protected override void Attack(Enemy enemy) { }
 }

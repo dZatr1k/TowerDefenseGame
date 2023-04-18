@@ -3,18 +3,10 @@ using UnityEngine;
 
 public class HeroPlacer : MonoBehaviour
 {
-    [SerializeField] private GameObject _heroList;
-    
+    [SerializeField] private GameObject _heroList;  
     private GameObject _typeOfHero;
 
-    private EnergyResources _energyResources;
-
     public static event Action OnHeroPlaced;
-
-    private void Start()
-    {
-        _energyResources = FindObjectOfType<EnergyResources>();
-    }
 
     private void OnEnable()
     {
@@ -31,7 +23,7 @@ public class HeroPlacer : MonoBehaviour
         if (cell.Hero == null && _typeOfHero != null)
         {
             Hero hero= Instantiate(_typeOfHero, cell.SpawnPoint.transform.position, Quaternion.identity, _heroList.transform).GetComponent<Hero>();
-            _energyResources.DecreaseBalance(hero.Cost);
+            EnergyResources.singleton.DecreaseBalance(hero.Cost);
             cell.SetHero(hero);
             OnHeroPlaced?.Invoke();
             

@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -14,8 +13,6 @@ public class Card : MonoBehaviour, IPointerClickHandler
     private float _reloadTime;
     private bool _isSelected = false;
     private bool _isReloading = false;
-
-    private EnergyResources _energyResources;
     public GameObject HeroPrefab => _heroPrefab;
     
 
@@ -28,8 +25,6 @@ public class Card : MonoBehaviour, IPointerClickHandler
             _reloadTime = hero.ReloadTime;
         }
         _reloadSlider = GetComponentInChildren<Slider>();
-
-        _energyResources = FindObjectOfType<EnergyResources>();
     }
 
     public void ChangeHeroPrefab(GameObject newHero)
@@ -62,7 +57,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     public void Select()
     {
-        if (_energyResources.TrySelect(_heroPrefab.GetComponent<Hero>().Cost))
+        if (EnergyResources.singleton.TrySelect(_heroPrefab.GetComponent<Hero>().Cost))
         {
             _isSelected = true;
             _router.ChangeSelectedHero(GetComponent<Card>());

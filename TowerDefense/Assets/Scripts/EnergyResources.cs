@@ -9,8 +9,11 @@ public class EnergyResources : MonoBehaviour
 
     public event Action<int> OnBalanceChange;
 
-    private void Start()
+    public static EnergyResources singleton { get; private set; }
+
+    private void Awake()
     {
+        singleton = this;
         UpdateCounter(_energyResources);
     }
 

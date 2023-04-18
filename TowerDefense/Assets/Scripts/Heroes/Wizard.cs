@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Wizard : Knight
+public class Wizard : NonAttackingHeroes
 {
     [SerializeField] private GameObject _energy;
     [SerializeField] private Transform _energySpawnPoint;
