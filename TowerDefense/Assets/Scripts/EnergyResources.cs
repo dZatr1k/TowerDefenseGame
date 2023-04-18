@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnergyResources : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _resourcesPreview;
-    private int _energyResources = 10;
+    private int _energyResources = 2;
 
     public event Action<int> OnBalanceChange;
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 
@@ -14,7 +15,13 @@ public class Energy : MonoBehaviour
     public void Collect()
     {
         _energyResources.IncreaseBalance(_unitsEnergy);
-        //gameObject.transform.DOMove(_energyResources.gameObject.transform.position, 0.2f);
+        gameObject.transform.DOMove(_energyResources.transform.position, 0.2f);
+        StartCoroutine(Destroy());
+    }
+
+    private IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
     }
 }
