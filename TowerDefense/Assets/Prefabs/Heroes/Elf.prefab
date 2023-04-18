@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.4615485, y: 0.59375}
+  m_Offset: {x: 0.4615485, y: 0.53656006}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.81123805, y: 1.1875}
+  m_Size: {x: 0.81123805, y: 0.6219549}
   m_EdgeRadius: 0
 --- !u!50 &244100076306293882
 Rigidbody2D:
@@ -172,6 +172,7 @@ MonoBehaviour:
   Damage: 30
   RechargeTime: 1.5
   _reloadTime: 1.5
+  _cost: 0
   _weaponPrefab: {fileID: 8443489387762531137, guid: 32bbb115d39ad5a4c9d444a7628a7f86, type: 3}
   _stunTime: 0.6
 --- !u!1001 &413026490139481467
