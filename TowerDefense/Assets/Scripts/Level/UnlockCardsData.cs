@@ -1,4 +1,4 @@
 public static class UnlockCardsData
 {
-    public static int UnlockCardsCount = 5;
+    public static int UnlockCardsCount = 7;
 }
