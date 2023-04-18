@@ -14,7 +14,7 @@ public class Energy : MonoBehaviour
     }
     public void Collect()
     {
-        _energyResources.IncreaseBalance(_unitsEnergy);
+        _energyResources.IncreaseBalance(_unitsEnergy + 100);
         gameObject.transform.DOMove(_energyResources.transform.position, 0.2f);
         StartCoroutine(Destroy());
     }
