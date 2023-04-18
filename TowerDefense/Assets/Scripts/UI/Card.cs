@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Card : MonoBehaviour, IPointerClickHandler
 {
@@ -9,6 +10,7 @@ public class Card : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _heroPrefab;
     [SerializeField] private Image _heroImage;
 
+    private TextMeshProUGUI _heroCostText;
     private Slider _reloadSlider;
     private float _reloadTime;
     private bool _isSelected = false;
@@ -18,10 +20,13 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
+        _heroCostText = GetComponentInChildren<TextMeshProUGUI>();
+
         _heroImage.sprite = _heroPrefab.GetComponent<SpriteRenderer>().sprite;
 
         if(_heroPrefab.TryGetComponent(out Hero hero))
         {
+            _heroCostText.text = hero.Cost.ToString();
             _reloadTime = hero.ReloadTime;
         }
         _reloadSlider = GetComponentInChildren<Slider>();

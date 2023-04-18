@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using TMPro;
 
 public class MenuCard : MonoBehaviour, IPointerClickHandler
 {
@@ -12,6 +13,7 @@ public class MenuCard : MonoBehaviour, IPointerClickHandler
     [SerializeField] private GameObject _heroPrefab;
     [SerializeField] private Image _heroImage;
 
+    private TextMeshProUGUI _heroCostText;
     private CardPoint[] _points;
     private RectTransform _rectTransform;
     private CardPoint _selectedPoint;
@@ -19,6 +21,10 @@ public class MenuCard : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
+        _heroCostText = GetComponentInChildren<TextMeshProUGUI>();
+        if(_heroPrefab.TryGetComponent(out Hero hero))
+            _heroCostText.text = hero.Cost.ToString();
+
         _heroImage.sprite = _heroPrefab.GetComponent<SpriteRenderer>().sprite;
         _rectTransform = GetComponent<RectTransform>();
         _startPosition = _rectTransform.position;
