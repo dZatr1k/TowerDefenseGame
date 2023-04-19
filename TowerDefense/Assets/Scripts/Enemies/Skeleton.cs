@@ -54,8 +54,11 @@ public class Skeleton : Enemy
     {
         IsRecharged = false;
         Animator.SetTrigger("attack");
-        _weaponAnimator?.SetTrigger("throw");
-        _currentWeapon.GetComponent<EnemyThrowingWeapon>()?.Throw();
+        if (_weaponAnimator && _currentWeapon)
+        {
+            _weaponAnimator.SetTrigger("throw");
+            _currentWeapon.GetComponent<EnemyThrowingWeapon>()?.Throw();
+        }
         StartCoroutine(Recharge());
     }
 

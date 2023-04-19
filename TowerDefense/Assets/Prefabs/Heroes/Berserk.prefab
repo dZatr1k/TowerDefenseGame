@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -4704860847270397266}
   - component: {fileID: 6008758188889609993}
   - component: {fileID: 4991195257906765946}
+  - component: {fileID: 4569336037643568681}
   m_Layer: 0
   m_Name: Berserk
   m_TagString: Untagged
@@ -298,6 +299,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &4569336037643568681
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978383589447497309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.004431, y: 0.53999996}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 1, y: 1.25}
+    newSize: {x: 1, y: 1.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1911383, y: 1.1525085}
+  m_EdgeRadius: 0
 --- !u!1001 &3679491384084597993
 PrefabInstance:
   m_ObjectHideFlags: 0
