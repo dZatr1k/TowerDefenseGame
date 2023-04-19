@@ -15,23 +15,18 @@ public class KamikazeWizard : Hero
         StartCoroutine(WaitForSeconds(_delayBeforeBam));
     }
 
+    private void OnCollisionStay2D(Collision2D collision) { }
+
     protected void Attack(Collider2D[] hitColliders)
     {
-        bool IsEnemy = false;
         Animator.SetTrigger("attack");
+        _particleSystem.Play();
         foreach (var collider in hitColliders)
         {
             if (collider.gameObject.TryGetComponent(out Enemy enemy))
-            {
-                IsEnemy = true;
                 enemy.TakeDamage(Damage);
-            }
         }
-        if (IsEnemy) 
-        {
-            _particleSystem.Play();
-            StartCoroutine(Die());
-        }
+        StartCoroutine(Die(0.2f));
     }
 
     protected override IEnumerator WaitForSeconds(float time)
@@ -40,5 +35,6 @@ public class KamikazeWizard : Hero
         Transform attackZoneTransform = _attackZoneCollider.gameObject.transform;
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(attackZoneTransform.position, _attackZoneCollider.size, 0, layerMask: LayerMask.GetMask("Default"));
         Attack(hitColliders);
+        yield return null;
     }
 }

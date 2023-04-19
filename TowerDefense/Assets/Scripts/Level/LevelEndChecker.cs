@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelEndChecker : MonoBehaviour
@@ -10,9 +8,9 @@ public class LevelEndChecker : MonoBehaviour
     private Enemy[] _enemies;
     private int _diedEnemies = 0;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.TryGetComponent(out Enemy enemy))
+        if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
             FinishLevel();
         }

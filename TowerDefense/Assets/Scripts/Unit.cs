@@ -33,6 +33,16 @@ public class Unit : MonoBehaviour
         StartCoroutine(WaitForSeconds(time));
     }
 
+    protected IEnumerator Die(float dieAnimatoinTime)
+    {
+        Animator.SetTrigger("die");
+        yield return new WaitForSeconds(dieAnimatoinTime);
+        Destroy(gameObject);
+        OnDied?.Invoke();
+        yield return null;
+
+    }
+
     protected virtual IEnumerator Die()
     {
         Animator.SetTrigger("die");
