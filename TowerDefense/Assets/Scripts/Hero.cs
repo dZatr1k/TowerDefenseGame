@@ -14,6 +14,7 @@ public class Hero : Unit
 
     private void OnEnable()
     {
+        _source.volume = SettingsData.SoundVolume;
         _standartRechargeTime = RechargeTime;
 
         ElfPrinces.OnElfPrincesEnable += SetBoost;

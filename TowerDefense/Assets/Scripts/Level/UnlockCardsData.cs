@@ -1,6 +1,6 @@
 public static class UnlockCardsData
 {
-    private static int _unclockCardsCount = 8;
+    private static int _unclockCardsCount = 1;
 
     public static int UnlockCardsCount
     {

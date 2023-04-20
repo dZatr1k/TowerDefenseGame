@@ -13,6 +13,8 @@ public class Enemy : Unit
 
     private void Start()
     {
+        _source.volume = SettingsData.SoundVolume;
+
         Animator.SetTrigger("walk");
     }
 
