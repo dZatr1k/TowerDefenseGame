@@ -37,8 +37,8 @@ public class Unit : MonoBehaviour
     {
         Animator.SetTrigger("die");
         yield return new WaitForSeconds(dieAnimatoinTime);
-        Destroy(gameObject);
         OnDied?.Invoke();
+        Destroy(gameObject);
         yield return null;
 
     }
@@ -47,8 +47,8 @@ public class Unit : MonoBehaviour
     {
         Animator.SetTrigger("die");
         yield return new WaitForSeconds(0.3f);
-        Destroy(gameObject);
         OnDied?.Invoke();
+        Destroy(gameObject);
         yield return null;
     }
 
