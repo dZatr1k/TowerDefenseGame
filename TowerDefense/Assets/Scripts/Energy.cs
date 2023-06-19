@@ -12,7 +12,8 @@ public class Energy : MonoBehaviour
     private void Awake()
     {
         _energyResources = FindObjectOfType<EnergyResources>();
-        Destroy(gameObject, 5);
+        if(!transform.parent)
+            Destroy(gameObject, 5);
     }
 
     public void Collect()

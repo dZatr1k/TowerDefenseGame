@@ -18,10 +18,13 @@ public class Wizard : NonAttackingHeroes
 
     private IEnumerator SpawnEnergy()
     {
-        IsRecharged = false;
-        float rechargeTime = Random.Range(_minRecargeTime, _maxRecargeTime);
-        yield return new WaitForSeconds(rechargeTime);
-        Instantiate(_energy, _energySpawnPoint.position, Quaternion.identity);
-        IsRecharged = true;
+        if (_energySpawnPoint.transform.childCount == 0)
+        {
+            IsRecharged = false;
+            float rechargeTime = Random.Range(_minRecargeTime, _maxRecargeTime);
+            yield return new WaitForSeconds(rechargeTime);
+            Instantiate(_energy, _energySpawnPoint.position, Quaternion.identity, _energySpawnPoint);
+            IsRecharged = true;
+        }
     }
 }
