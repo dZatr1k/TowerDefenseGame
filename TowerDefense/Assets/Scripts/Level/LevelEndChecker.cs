@@ -4,6 +4,7 @@ public class LevelEndChecker : MonoBehaviour
 {
     [SerializeField] private GameObject _gameOverPanel;
     [SerializeField] private GameObject _levelCompletePanel;
+    [SerializeField] private GameObject _enemyList;
     
     private Enemy[] _enemies;
     private int _diedEnemies = 0;
@@ -11,9 +12,7 @@ public class LevelEndChecker : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Enemy enemy))
-        {
             FinishLevel();
-        }
     }
 
     private void OnEnable()
@@ -29,9 +28,7 @@ public class LevelEndChecker : MonoBehaviour
             return;
 
         for (int i = 0; i < _enemies.Length; i++)
-        {
             _enemies[i].OnDied -= CheckEnemies;
-        }
     }
 
     private void FinishLevel()
@@ -43,9 +40,7 @@ public class LevelEndChecker : MonoBehaviour
     private void SubscribeToEnemiesDeath()
     {
         for (int i = 0; i < _enemies.Length; i++)
-        {
             _enemies[i].OnDied += CheckEnemies;
-        }
 
         _diedEnemies = 0;
     }
@@ -53,24 +48,18 @@ public class LevelEndChecker : MonoBehaviour
     private void CheckEnemies()
     {
         _diedEnemies++;
-        if(_diedEnemies == _enemies.Length)
-        {
+        if (_diedEnemies == _enemies.Length)
             CompleteLevel();
-        }
     }
 
     private void TryCompleteLevel()
     {
-        _enemies = FindObjectsOfType<Enemy>();
+        _enemies = _enemyList.GetComponentsInChildren<Enemy>();
 
-        if(_enemies.Length == 0) 
-        {
+        if (_enemies.Length == 0) 
             CompleteLevel();
-        }
         else
-        {
             SubscribeToEnemiesDeath();
-        }
     }
 
     private void CompleteLevel()

@@ -13,7 +13,7 @@ public class SubWave : MonoBehaviour
         foreach (var enemy in _enemies)
         {
             spawner.SpawnEnemy(enemy);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.4f);
         }
     }
 }

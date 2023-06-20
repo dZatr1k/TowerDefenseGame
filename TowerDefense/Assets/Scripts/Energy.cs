@@ -4,8 +4,9 @@ using DG.Tweening;
 
 public class Energy : MonoBehaviour
 {
-    [SerializeField] private int _unitsEnergy = 1;
+    [SerializeField] private int _unitsEnergy = 2;
     [SerializeField] private AudioSource _source;
+    private bool _isCollected = false;
 
     private EnergyResources _energyResources;
 
@@ -16,12 +17,16 @@ public class Energy : MonoBehaviour
             Destroy(gameObject, 5);
     }
 
-    public void Collect()
+    public void TryCollect()
     {
-        _source.Play();
-        _energyResources.IncreaseBalance(_unitsEnergy);
-        gameObject.transform.DOMove(_energyResources.transform.position, 0.2f);
-        StartCoroutine(Destroy());
+        if (!_isCollected)
+        {
+            _isCollected = true;
+            _source.Play();
+            _energyResources.IncreaseBalance(_unitsEnergy);
+            gameObject.transform.DOMove(_energyResources.transform.position, 0.2f);
+            StartCoroutine(Destroy());
+        }
     }
 
     private IEnumerator Destroy()
