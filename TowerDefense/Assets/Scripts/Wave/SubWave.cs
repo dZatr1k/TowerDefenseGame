@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class SubWave : MonoBehaviour
@@ -8,12 +7,8 @@ public class SubWave : MonoBehaviour
 
     public float Duration => _duration;
 
-    public IEnumerator StartSubWave(EnemySpawner spawner)
+    public void StartSubWave(EnemySpawner spawner)
     {
-        foreach (var enemy in _enemies)
-        {
-            spawner.SpawnEnemy(enemy);
-            yield return new WaitForSeconds(0.4f);
-        }
+        StartCoroutine(spawner.SpawnEnemies(_enemies));
     }
 }

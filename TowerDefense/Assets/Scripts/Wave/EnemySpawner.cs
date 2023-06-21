@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -5,9 +6,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private GameObject _enemyList;
 
-    public void SpawnEnemy(Enemy enemy)
+    public IEnumerator SpawnEnemies(Enemy[] enemies)
     {
-        int randomPointNumber = Random.Range(0, _spawnPoints.Length);
-        Instantiate(enemy, _spawnPoints[randomPointNumber].position, Quaternion.identity, _enemyList.transform);
+        _spawnPoints.Shuffle();
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            Instantiate(enemies[i], _spawnPoints[i % 5].position, Quaternion.identity, _enemyList.transform);
+            yield return new WaitForSeconds(0.25f);
+        }
     }
 }

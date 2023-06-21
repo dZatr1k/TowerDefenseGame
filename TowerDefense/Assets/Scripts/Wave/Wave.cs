@@ -25,7 +25,7 @@ public class Wave : MonoBehaviour
     {
         foreach (var subWave in _subWaves)
         {
-            StartCoroutine(subWave.StartSubWave(spawner));
+            subWave.StartSubWave(spawner);
             yield return new WaitForSeconds(subWave.Duration);
         }
     }
