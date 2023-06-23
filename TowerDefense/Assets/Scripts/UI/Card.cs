@@ -9,14 +9,24 @@ public class Card : MonoBehaviour, IPointerClickHandler
     [SerializeField] private SelectedCardRouter _router;
     [SerializeField] private GameObject _heroPrefab;
     [SerializeField] private Image _heroImage;
+    [SerializeField] private GameObject _shade;
 
     private TextMeshProUGUI _heroCostText;
     private Slider _reloadSlider;
     private float _reloadTime;
     private bool _isSelected = false;
     private bool _isReloading = false;
+    private bool _isAvailability = false;
     public GameObject HeroPrefab => _heroPrefab;
-    
+
+    private void OnEnable()
+    {
+        EnergyResources.OnBalanceChange += CheckAvailabilityStatus;
+    }
+    private void OnDisable()
+    {
+        EnergyResources.OnBalanceChange -= CheckAvailabilityStatus;
+    }
 
     private void Start()
     {
@@ -39,17 +49,14 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_isReloading == false)
+        if (_isSelected)
         {
-            if (_isSelected)
-            {
-                Deselect();
-                _router.RemoveSelectedHero();
-            }
-            else
-            {
-                Select();
-            }
+            Deselect();
+            _router.RemoveSelectedHero();
+        }
+        else
+        {
+            Select();
         }
     }
 
@@ -62,11 +69,26 @@ public class Card : MonoBehaviour, IPointerClickHandler
 
     public void Select()
     {
-        if (EnergyResources.singleton.TrySelect(_heroPrefab.GetComponent<Hero>().Cost))
+        if (_isAvailability && !_isReloading)
         {
             _isSelected = true;
             _router.ChangeSelectedHero(GetComponent<Card>());
             _reloadSlider.value = 1;
+        }
+    }
+
+    private void CheckAvailabilityStatus(int balance)
+    {
+        if (_heroPrefab.GetComponent<Hero>().Cost <= balance)
+        {
+            _isAvailability = true;
+            _shade.SetActive(false);
+        }
+            
+        else
+        {
+            _isAvailability = false;
+            _shade.SetActive(true);
         }
     }
 
