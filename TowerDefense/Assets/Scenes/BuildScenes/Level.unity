@@ -1759,6 +1759,7 @@ GameObject:
   - component: {fileID: 297586998}
   - component: {fileID: 297587001}
   - component: {fileID: 297587002}
+  - component: {fileID: 297587003}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1856,6 +1857,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f2f4036b22f62943be6fd13426391e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &297587003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297586997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 192
+  m_MaxRayIntersections: 0
 --- !u!1001 &324261897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5701,8 +5718,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049197689}
-  - component: {fileID: 1049197688}
-  - component: {fileID: 1049197690}
   m_Layer: 0
   m_Name: Interactions
   m_TagString: Untagged
@@ -5710,19 +5725,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1049197688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049197687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c655a2c59362fab4bb3baab3fe3e558c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 297586999}
 --- !u!4 &1049197689
 Transform:
   m_ObjectHideFlags: 0
@@ -5738,19 +5740,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1049197690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049197687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e85ba077d0d71b44e8d307f72c9d696b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _camera: {fileID: 297586999}
 --- !u!1 &1057766484
 GameObject:
   m_ObjectHideFlags: 0

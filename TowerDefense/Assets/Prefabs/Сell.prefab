@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1275950612766427262}
   - component: {fileID: 3260037329403779300}
   - component: {fileID: 5006157637896387361}
+  - component: {fileID: 7335045980099197832}
   m_Layer: 6
   m_Name: "\u0421ell"
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: -711134866, guid: c2a17d83d08d1904ea34165a6a4648f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.87058824, g: 0.87058824, b: 0.87058824, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -690,7 +690,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746326667}
-  - component: {fileID: 746326666}
   m_Layer: 0
   m_Name: EnergyResources
   m_TagString: Untagged
@@ -698,19 +697,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &746326666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746326665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f922a62aa8906468b24c282e780341, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _resourcesPreview: {fileID: 1660866408}
 --- !u!4 &746326667
 Transform:
   m_ObjectHideFlags: 0

@@ -1,8 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
-public class Energy : MonoBehaviour
+public class Energy : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] private int _unitsEnergy = 2;
     [SerializeField] private AudioSource _source;
@@ -10,9 +11,14 @@ public class Energy : MonoBehaviour
 
     private EnergyResources _energyResources;
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        TryCollect();
+    }
+
     private void Awake()
     {
-        _energyResources = FindObjectOfType<EnergyResources>();
+        _energyResources = EnergyResources.singleton;
         if(!transform.parent)
             Destroy(gameObject, 5);
     }
