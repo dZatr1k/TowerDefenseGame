@@ -1,7 +1,11 @@
 using UnityEngine;
+using Units.Enemies;
 
-public class NonAttackingHeroes : Hero
+namespace Units.Heroes
 {
-    protected void OnTriggerStay2D(Collider2D other) { }
-    protected override void Attack(Enemy enemy) { }
+    public class NonAttackingHeroes : Hero
+    {
+        protected void OnTriggerStay2D(Collider2D other) { }
+        protected override void Attack(Enemy enemy) { }
+    }
 }

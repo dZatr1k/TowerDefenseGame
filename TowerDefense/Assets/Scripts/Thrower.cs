@@ -1,7 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using Units.Enemies;
 
-public class Thrower : Hero
+namespace Units.Heroes
+{
+    public class Thrower : Hero
 {
     [SerializeField] protected GameObject _weaponPrefab;
     protected Animator _weaponAnimator;
@@ -74,4 +77,5 @@ public class Thrower : Hero
         IsRecharged = true;
         CreateCurrentWeapon();
     }
+}
 }

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Units.Heroes;
 
 public class Cell : MonoBehaviour, IPointerClickHandler
 {

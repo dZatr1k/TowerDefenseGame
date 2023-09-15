@@ -1,4 +1,5 @@
 using UnityEngine;
+using Units.Enemies;
 
 public class LevelEndChecker : MonoBehaviour
 {

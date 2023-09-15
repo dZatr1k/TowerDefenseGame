@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using TMPro;
+using Units.Heroes;
 
 public class MenuCard : MonoBehaviour, IPointerClickHandler
 {

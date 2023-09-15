@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class Archer : Thrower
+namespace Units.Heroes
+{
+    public class Archer : Thrower
 {
     protected override void Start()
     {
@@ -8,4 +10,5 @@ public class Archer : Thrower
         SetSpawnInfo(_weaponSpawnPos, Quaternion.identity);
         CreateCurrentWeapon();
     }
+}
 }

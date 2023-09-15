@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Imp : Enemy
+namespace Units.Enemies
 {
-    
+    public class MascedOrc : Enemy {}
 }

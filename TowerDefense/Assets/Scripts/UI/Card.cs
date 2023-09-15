@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using Units.Heroes;
 
 public class Card : MonoBehaviour, IPointerClickHandler
 {

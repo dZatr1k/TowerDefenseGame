@@ -1,71 +1,74 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
+using Units.Heroes;
 
-public class Enemy : Unit
+namespace Units.Enemies
 {
-    [SerializeField] protected float Speed;
-    [SerializeField] private AudioSource _source;
+    public class Enemy : Unit
+    {
+        [SerializeField] protected float Speed;
+        [SerializeField] private AudioSource _source;
 
-    protected bool _isWalking = true;
+        protected bool _isWalking = true;
     
-    public int GetDamageInfo => Damage;
+        public int GetDamageInfo => Damage;
 
-    private void Start()
-    {
-        _source.volume = SettingsData.SoundVolume;
-
-        Animator.SetTrigger("walk");
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent(out Hero hero))
+        private void Start()
         {
-            _isWalking = false;
-            Attack(hero);
-        }
-    }
+            _source.volume = SettingsData.SoundVolume;
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.TryGetComponent(out Hero hero))
-        {
-            _isWalking = true;
             Animator.SetTrigger("walk");
         }
-    }
 
-    private void Update()
-    {
-        if (_isWalking)
+        private void OnCollisionStay2D(Collision2D collision)
         {
-            transform.position += Vector3.left * (Speed * Time.deltaTime);
+            if (collision.gameObject.TryGetComponent(out Hero hero))
+            {
+                _isWalking = false;
+                Attack(hero);
+            }
         }
-    }
 
-    protected virtual void Attack(Hero hero)
-    {
-        if (IsRecharged)
+        private void OnCollisionExit2D(Collision2D other)
         {
-            IsRecharged = false;
-            Animator.SetTrigger("attack");
-            hero.TakeDamage(Damage);
-
-            StartCoroutine(Recharge());
+            if (other.gameObject.TryGetComponent(out Hero hero))
+            {
+                _isWalking = true;
+                Animator.SetTrigger("walk");
+            }
         }
-    }
 
-    protected override IEnumerator WaitForSeconds(float time)
-    {
-        _isWalking = false;
-        yield return new WaitForSeconds(time);
-        _isWalking = true;
-    }
+        private void Update()
+        {
+            if (_isWalking)
+            {
+                transform.position += Vector3.left * (Speed * Time.deltaTime);
+            }
+        }
 
-    public new void TakeDamage(int damage)
-    {
-        _source.Play();
-        base.TakeDamage(damage);
+        protected virtual void Attack(Hero hero)
+        {
+            if (IsRecharged)
+            {
+                IsRecharged = false;
+                Animator.SetTrigger("attack");
+                hero.TakeDamage(Damage);
+
+                StartCoroutine(Recharge());
+            }
+        }
+
+        protected override IEnumerator WaitForSeconds(float time)
+        {
+            _isWalking = false;
+            yield return new WaitForSeconds(time);
+            _isWalking = true;
+        }
+
+        public new void TakeDamage(int damage)
+        {
+            _source.Play();
+            base.TakeDamage(damage);
+        }
     }
 }

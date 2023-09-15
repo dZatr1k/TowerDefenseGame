@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Units.Heroes;
 
 public class HeroPlacer : MonoBehaviour
 {

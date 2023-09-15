@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Units.Enemies;
 
-public class WildDino : Thrower
+namespace Units.Heroes
+{
+    public class WildDino : Thrower
 {
     private List<GameObject> _currentWeapons = new List<GameObject>();
     private List<Animator> _currentWeaponsAnimators = new List<Animator>();
@@ -66,4 +69,5 @@ public class WildDino : Thrower
             yield return new WaitForSeconds(0.1f);
         }
     }
+}
 }

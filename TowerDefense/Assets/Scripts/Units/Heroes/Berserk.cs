@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Units.Enemies;
 
-public class Berserk : Hero
+namespace Units.Heroes
+{
+    public class Berserk : Hero
 {
     private List<Enemy> _enemyList = new List<Enemy>();
     private Animator _swordAnimator;
@@ -50,4 +53,5 @@ public class Berserk : Hero
                 _enemyList.Remove(enemy);
         }
     }
+}
 }

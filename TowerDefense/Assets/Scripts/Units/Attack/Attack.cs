@@ -1,6 +1,6 @@
 using System;
 
-namespace Units.Attack
+namespace Units.Attacks
 {
     public abstract class Attack
     {
