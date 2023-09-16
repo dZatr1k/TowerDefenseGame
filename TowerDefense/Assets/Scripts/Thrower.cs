@@ -18,7 +18,7 @@ namespace Units.Heroes
     protected Vector3 _weaponSpawnPos = new Vector3(0.85f, 0.4f, 0);
     protected Quaternion _weaponSpawnAngle = Quaternion.Euler(0, 0, -67);
 
-    public int GetDamageInfo => Damage;
+    public int GetDamageInfo => _damage;
 
     protected virtual void Start()
     {
@@ -41,7 +41,7 @@ namespace Units.Heroes
     
     protected virtual void OnTriggerStay2D(Collider2D other)
     {
-        if (other.TryGetComponent(out Enemy enemy) && IsRecharged && !other.isTrigger) 
+        if (other.TryGetComponent(out Enemy enemy) && _isRecharged && !other.isTrigger) 
         {
             Attack(enemy);
         }
@@ -49,8 +49,8 @@ namespace Units.Heroes
 
     protected override void Attack(Enemy enemy)
     {
-        IsRecharged = false;
-        Animator.SetTrigger("attack");
+        _isRecharged = false;
+        _animator.SetTrigger("attack");
         if (_weaponAnimator && _currentWeapon)
         {
             _weaponAnimator.SetTrigger("throw");
@@ -73,8 +73,8 @@ namespace Units.Heroes
 
     protected override IEnumerator Recharge()
     {
-        yield return new WaitForSeconds(RechargeTime);
-        IsRecharged = true;
+        yield return new WaitForSeconds(_rechargeTime);
+        _isRecharged = true;
         CreateCurrentWeapon();
     }
 }

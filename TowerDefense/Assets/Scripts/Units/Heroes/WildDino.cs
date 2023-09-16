@@ -27,8 +27,8 @@ namespace Units.Heroes
 
     protected override void Attack(Enemy enemy)
     {
-        IsRecharged = false;
-        Animator.SetTrigger("attack");
+        _isRecharged = false;
+        _animator.SetTrigger("attack");
         StartCoroutine(IntervalThrows());
         StartCoroutine(Recharge());
     }
@@ -48,13 +48,13 @@ namespace Units.Heroes
 
     protected override IEnumerator Recharge()
     {
-        yield return new WaitForSeconds(RechargeTime);
+        yield return new WaitForSeconds(_rechargeTime);
         _currentWeapons = new List<GameObject>();
         _currentWeaponsAnimators = new List<Animator>();
 
         CreateCurrentWeapon();
         CreateCurrentWeapon();
-        IsRecharged = true;
+        _isRecharged = true;
     }
 
     private IEnumerator IntervalThrows()

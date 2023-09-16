@@ -11,13 +11,13 @@ namespace Units.Enemies
 
         protected bool _isWalking = true;
     
-        public int GetDamageInfo => Damage;
+        public int GetDamageInfo => _damage;
 
         private void Start()
         {
             _source.volume = SettingsData.SoundVolume;
 
-            Animator.SetTrigger("walk");
+            _animator.SetTrigger("walk");
         }
 
         private void OnCollisionStay2D(Collision2D collision)
@@ -34,7 +34,7 @@ namespace Units.Enemies
             if (other.gameObject.TryGetComponent(out Hero hero))
             {
                 _isWalking = true;
-                Animator.SetTrigger("walk");
+                _animator.SetTrigger("walk");
             }
         }
 
@@ -48,11 +48,11 @@ namespace Units.Enemies
 
         protected virtual void Attack(Hero hero)
         {
-            if (IsRecharged)
+            if (_isRecharged)
             {
-                IsRecharged = false;
-                Animator.SetTrigger("attack");
-                hero.TakeDamage(Damage);
+                _isRecharged = false;
+                _animator.SetTrigger("attack");
+                hero.TakeDamage(_damage);
 
                 StartCoroutine(Recharge());
             }

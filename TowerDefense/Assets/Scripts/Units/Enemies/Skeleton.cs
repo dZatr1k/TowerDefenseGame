@@ -38,7 +38,7 @@ namespace Units.Enemies
 
         protected virtual void OnTriggerStay2D(Collider2D other)
         {
-            if (other.TryGetComponent(out Hero hero) && IsRecharged && !other.isTrigger)
+            if (other.TryGetComponent(out Hero hero) && _isRecharged && !other.isTrigger)
             {
                 _isWalking = false;
                 Attack(hero);
@@ -54,8 +54,8 @@ namespace Units.Enemies
 
         protected override void Attack(Hero hero)
         {
-            IsRecharged = false;
-            Animator.SetTrigger("attack");
+            _isRecharged = false;
+            _animator.SetTrigger("attack");
             if (_weaponAnimator && _currentWeapon)
             {
                 _weaponAnimator.SetTrigger("throw");
@@ -78,8 +78,8 @@ namespace Units.Enemies
 
         protected override IEnumerator Recharge()
         {
-            yield return new WaitForSeconds(RechargeTime);
-            IsRecharged = true;
+            yield return new WaitForSeconds(_rechargeTime);
+            _isRecharged = true;
             CreateCurrentWeapon();
         }
     }

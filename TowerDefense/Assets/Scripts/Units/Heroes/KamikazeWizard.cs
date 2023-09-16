@@ -22,12 +22,12 @@ namespace Units.Heroes
 
         protected void Attack(Collider2D[] hitColliders)
         {
-            Animator.SetTrigger("attack");
+            _animator.SetTrigger("attack");
             _particleSystem.Play();
             foreach (var collider in hitColliders)
             {
                 if (collider.gameObject.TryGetComponent(out Enemy enemy))
-                    enemy.TakeDamage(Damage);
+                    enemy.TakeDamage(_damage);
             }
             StartCoroutine(Die(0.2f));
         }

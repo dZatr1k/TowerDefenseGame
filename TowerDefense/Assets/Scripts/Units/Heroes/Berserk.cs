@@ -25,7 +25,7 @@ namespace Units.Heroes
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.TryGetComponent(out Enemy enemy) && IsRecharged)
+        if (other.TryGetComponent(out Enemy enemy) && _isRecharged)
             Attack();
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -36,11 +36,11 @@ namespace Units.Heroes
 
     protected void Attack()
     {
-        IsRecharged = false;
-        Animator.SetTrigger("attack");
+        _isRecharged = false;
+        _animator.SetTrigger("attack");
         _swordAnimator.SetTrigger("attack");
         foreach (var enemy in _enemyList)
-            enemy.TakeDamage(Damage);
+            enemy.TakeDamage(_damage);
         RemoveDeath();
         StartCoroutine(Recharge());
     }

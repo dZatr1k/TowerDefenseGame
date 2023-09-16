@@ -18,7 +18,7 @@ namespace Units.Heroes
         private void OnEnable()
         {
             _source.volume = SettingsData.SoundVolume;
-            _standartRechargeTime = RechargeTime;
+            _standartRechargeTime = _rechargeTime;
 
             ElfPrinces.OnElfPrincesEnable += SetBoost;
             ElfPrinces.OnElfPrincesDisable += DiscardBoost;
@@ -32,7 +32,7 @@ namespace Units.Heroes
 
         private void OnCollisionStay2D(Collision2D collision)
         {
-            if (collision.gameObject.TryGetComponent(out Enemy enemy) && IsRecharged)
+            if (collision.gameObject.TryGetComponent(out Enemy enemy) && _isRecharged)
             {
                 Attack(enemy);
             }
@@ -40,9 +40,9 @@ namespace Units.Heroes
 
         protected virtual void Attack(Enemy enemy)
         {
-            IsRecharged = false;
-            Animator.SetTrigger("attack");
-            enemy.TakeDamage(Damage);
+            _isRecharged = false;
+            _animator.SetTrigger("attack");
+            enemy.TakeDamage(_damage);
             StartCoroutine(Recharge());
         }
 
@@ -50,25 +50,25 @@ namespace Units.Heroes
         {
             if (isSlowed && !slow)
             {
-                RechargeTime = _standartRechargeTime;
+                _rechargeTime = _standartRechargeTime;
                 isSlowed = false;
             }
             else if (!isSlowed && slow)
             {
                 print(gameObject.name + " Slowed");
-                RechargeTime *= 1.5f;
+                _rechargeTime *= 1.5f;
                 isSlowed = true;
             }
         }
 
         private void SetBoost(float boostPercent)
         {
-            RechargeTime -= RechargeTime * boostPercent;
+            _rechargeTime -= _rechargeTime * boostPercent;
         }
 
         private void DiscardBoost()
         {
-            RechargeTime = _standartRechargeTime;
+            _rechargeTime = _standartRechargeTime;
         }
 
         public new void TakeDamage(int damage)

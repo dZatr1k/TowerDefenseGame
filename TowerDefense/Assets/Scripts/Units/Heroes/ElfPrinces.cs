@@ -41,7 +41,7 @@ namespace Units.Heroes
         protected override IEnumerator Die()
         {
             OnElfPrincesDisable?.Invoke();
-            Animator.SetTrigger("die");
+            _animator.SetTrigger("die");
             yield return new WaitForSeconds(0.3f);
             Destroy(gameObject);
             OnDied?.Invoke();

@@ -20,6 +20,31 @@ namespace Units.Attacks
             }
         }
 
+        public Attack() : this(0){}
+
+        public Attack(int damage)
+        {
+            Damage = damage;
+        }
+
         public abstract void AttackTo(Unit target);
+
+        public static Attack GenerateAttack(AttackType type)
+        {
+            return GenerateAttack(type, 0);
+        }
+
+        public static Attack GenerateAttack(AttackType type, int startDamage)
+        {
+            switch (type)
+            {
+                case AttackType.DefaultAttack:
+                    return new DefaultAttack(startDamage);
+                case AttackType.ThrowAttack:
+                    return new ThrowAttack(startDamage);
+                default:
+                    throw new ArgumentException("Unknown/NotImplemented AttackType");
+            }
+        }
     }
 }

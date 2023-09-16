@@ -13,7 +13,7 @@ namespace Units.Heroes
 
         private void Update()
         {
-            if (IsRecharged)
+            if (_isRecharged)
                 StartCoroutine(SpawnEnergy());
         }
 
@@ -22,11 +22,11 @@ namespace Units.Heroes
         {
             if (_energySpawnPoint.transform.childCount == 0)
             {
-                IsRecharged = false;
+                _isRecharged = false;
                 float rechargeTime = Random.Range(_minRecargeTime, _maxRecargeTime);
                 yield return new WaitForSeconds(rechargeTime);
                 Instantiate(_energy, _energySpawnPoint.position, Quaternion.identity, _energySpawnPoint);
-                IsRecharged = true;
+                _isRecharged = true;
             }
         }
     }

@@ -9,26 +9,32 @@ namespace Units
     {
         public UnityAction OnDied;
 
-        [SerializeField] protected int Health;
-        [SerializeField] protected int Damage;
-        [SerializeField] protected float RechargeTime;
-    
-        protected bool IsRecharged = true;
-        protected Animator Animator;
+        [Header("Personal settings")]
+        [SerializeField] protected int _health;
+
+        [Header("Attack settings")]
+        [SerializeField] protected AttackType _attackType;
+        [SerializeField] protected int _damage;
+        [SerializeField] protected float _rechargeTime;
+
+        protected Attack _attack;
+        protected bool _isRecharged = true;
+        protected Animator _animator;
 
         private void Awake()
         {
-            Animator = GetComponent<Animator>();
+            _animator = GetComponent<Animator>();
+            _attack = Attack.GenerateAttack(_attackType, _damage);
         }
 
         public void TakeDamage(int damage)
         {
-            Health -= damage;
+            _health -= damage;
 
-            if (Health <= 0)
+            if (_health <= 0)
                 StartCoroutine(Die());
             else
-                Animator.SetTrigger("damaged");
+                _animator.SetTrigger("damaged");
         }
 
         public virtual void Stun(float time)
@@ -38,7 +44,7 @@ namespace Units
 
         protected IEnumerator Die(float dieAnimatoinTime)
         {
-            Animator.SetTrigger("die");
+            _animator.SetTrigger("die");
             yield return new WaitForSeconds(dieAnimatoinTime);
             OnDied?.Invoke();
             Destroy(gameObject);
@@ -48,7 +54,7 @@ namespace Units
 
         protected virtual IEnumerator Die()
         {
-            Animator.SetTrigger("die");
+            _animator.SetTrigger("die");
             yield return new WaitForSeconds(0.3f);
             OnDied?.Invoke();
             Destroy(gameObject);
@@ -57,8 +63,8 @@ namespace Units
 
         protected virtual IEnumerator Recharge()
         {
-            yield return new WaitForSeconds(RechargeTime);
-            IsRecharged = true;
+            yield return new WaitForSeconds(_rechargeTime);
+            _isRecharged = true;
         }
 
         protected virtual IEnumerator WaitForSeconds(float time)
@@ -66,5 +72,4 @@ namespace Units
             yield return new WaitForSeconds(time);
         }
     }
-
 }
