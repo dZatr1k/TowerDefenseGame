@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 namespace Units.Attacks
 {
@@ -15,7 +16,8 @@ namespace Units.Attacks
             set
             {
                 if (_damage <= 0)
-                    throw new ArgumentException("damage must be positive");
+                    UnityEngine.Debug.Log("damage must be positive");
+                    //throw new ArgumentException("damage must be positive");
                 _damage = value;
             }
         }
